@@ -27,6 +27,12 @@
   .notice{border-radius:10px;padding:12px 14px;margin-top:14px;background:var(--soft)}
   .warn{background:var(--wsoft);color:var(--warn)} .err{color:var(--err)}
   .result{border-top:1px solid var(--line);padding:12px 0} .result a{color:var(--acc);font-weight:700}
+  .letter{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0;font:15px/1.6 Georgia,serif}
+  .badge{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 10px;margin-left:8px}
+  .b-strong,.b-positive{background:var(--soft);color:var(--acc)} .b-reserved,.b-cannot_recommend{background:var(--wsoft);color:var(--warn)}
+  .rowbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px} .rowbtns a,.rowbtns button{font-size:14px;padding:9px 16px;margin:0;border-radius:999px;text-decoration:none}
+  .ghost{background:transparent;color:var(--acc);border:1.5px solid var(--acc)} .rowbtns a.primary{background:var(--acc);color:#fff;font-weight:700}
+  details{margin-top:10px} summary{cursor:pointer;font-weight:600}
   ul.flags{margin:6px 0 0;padding-left:20px;color:var(--warn);font-size:14px}
 </style>
 </head>
@@ -65,7 +71,7 @@
     <div id="results"></div>
   </div>
   </div>
-  <p class="mut small">Drafts are saved as Google Docs in your "Letters of Recommendation – Drafts" folder and emailed to you. Review and edit every draft before sending.</p>
+  <p class="mut small">Drafts are saved as Google Docs on Folsom Lake College letterhead in your "Letters of Recommendation – Drafts" folder and emailed to you. Review and edit every draft before sending.</p>
 </div>
 
 <script>
@@ -140,39 +146,67 @@ rows.forEach(([k, v]) => {
   $('programs').append(lab);
 });
 
-$('go').addEventListener('click', () => {
+$('go').addEventListener('click', async () => {
   const notes = $('notes').value.trim();
-  const programs = [...document.querySelectorAll('.prog')].filter(c => c.checked).map(c => +c.value);
+  const picks = [...document.querySelectorAll('.prog')].filter(c => c.checked).map(c => +c.value);
   const st = $('status');
   st.hidden = false; st.className = 'notice';
   if (notes.length < 20) { st.textContent = 'Please add a sentence or two of your own observations first.'; st.className = 'notice warn'; return; }
-  if (!programs.length) { st.textContent = 'Pick at least one school.'; st.className = 'notice warn'; return; }
+  if (!picks.length) { st.textContent = 'Pick at least one school.'; st.className = 'notice warn'; return; }
   $('go').disabled = true;
-  st.textContent = 'Writing ' + programs.length + ' draft' + (programs.length > 1 ? 's' : '') + '… this usually takes 15–30 seconds each. Keep this page open.';
-  call({ action: 'generate', id: P.id, t: TOKEN, opts: {
-      notes, schools: programs, extra: $('extra').value.trim(),
-      length: (document.querySelector('input[name=len]:checked') || {}).value,
-      credentials: $('cred').checked,
-    } })
-    .then(out => {
-      if (!out.ok) throw new Error(out.error || 'Something went wrong. Nothing was saved.');
-      const res = out.results;
-      $('go').disabled = false;
-      st.textContent = 'Done. The draft' + (res.length > 1 ? 's are' : ' is') + ' below and in your email.';
-      res.forEach(x => {
-        const d = el('div', null, 'result');
-        d.append(el('div', x.program));
-        const a = el('a', 'Open Google Doc'); a.href = x.url; a.target = '_blank'; d.append(a);
-        if (x.flags && x.flags.length) { const ul = el('ul', null, 'flags'); x.flags.forEach(f => ul.append(el('li', f))); d.append(ul); }
-        $('results').append(d);
-      });
-    })
-    .catch(err => {
-      $('go').disabled = false;
-      st.className = 'notice err';
-      st.textContent = (err && err.message) || 'Something went wrong. Nothing was saved.';
-    });
+  $('results').innerHTML = '';
+  let ok = 0;
+  for (let n = 0; n < picks.length; n++) {
+    const sc = P.schools[picks[n]];
+    st.className = 'notice';
+    st.textContent = `Writing letter ${n + 1} of ${picks.length} (${sc.school})… about 30–60 seconds. A first draft is written in your voice, then checked line by line against the facts. Keep this page open.`;
+    try {
+      const out = await call({ action: 'generate', id: P.id, t: TOKEN, opts: {
+        notes, school: picks[n], extra: $('extra').value.trim(),
+        length: (document.querySelector('input[name=len]:checked') || {}).value,
+        credentials: $('cred').checked } });
+      if (!out.ok) throw new Error(out.error || 'Something went wrong. Nothing was created.');
+      renderResult(out.result); ok++;
+    } catch (err) {
+      const d = el('div', null, 'result'); d.append(el('strong', sc.school + ': '), el('span', (err && err.message) || 'Something went wrong.', 'err'));
+      $('results').append(d);
+    }
+  }
+  $('go').disabled = false;
+  $('go').textContent = 'Generate again';
+  st.className = ok ? 'notice' : 'notice err';
+  st.textContent = ok ? `Done: ${ok} draft${ok > 1 ? 's' : ''} on Folsom Lake College letterhead, below and in your email. Want changes? Type them in "Anything to emphasize or avoid" and press Generate again.`
+                      : 'No drafts were created. See the message below.';
 });
+
+const LABEL = { strong: 'Strong', positive: 'Positive', reserved: 'Reserved', cannot_recommend: 'Not recommended' };
+function renderResult(x) {
+  const d = el('div', null, 'result');
+  const h = el('div'); h.append(el('strong', x.program));
+  const b = el('span', LABEL[x.assessment] || x.assessment, 'badge b-' + x.assessment); h.append(b);
+  d.append(h);
+  if (x.assessment === 'reserved' || x.assessment === 'cannot_recommend') {
+    d.append(el('div', 'Your notes express doubts, so this draft is short and measured, with no strong praise. If you would rather not write this letter, a polite decline email is below.', 'notice warn'));
+  }
+  d.append(el('div', x.letter, 'letter'));
+  const btns = el('div', null, 'rowbtns');
+  const a = el('a', 'Open on letterhead (Google Doc)', 'primary'); a.href = x.url; a.target = '_blank'; a.rel = 'noopener';
+  const cp = el('button', 'Copy letter text', 'ghost'); cp.type = 'button';
+  cp.onclick = () => navigator.clipboard.writeText(x.letter).then(() => { cp.textContent = 'Copied'; setTimeout(() => cp.textContent = 'Copy letter text', 1500); });
+  btns.append(a, cp); d.append(btns);
+  if (x.flags && x.flags.length) {
+    const det = el('details'); det.open = true; det.append(el('summary', 'Check before sending (' + x.flags.length + ')'));
+    const ul = el('ul', null, 'flags'); x.flags.forEach(f => ul.append(el('li', f))); det.append(ul); d.append(det);
+  }
+  if (x.declineEmail) {
+    const det = el('details'); det.append(el('summary', 'Polite decline email to the student'));
+    det.append(el('div', x.declineEmail, 'letter'));
+    const c2 = el('button', 'Copy email', 'ghost'); c2.type = 'button';
+    c2.onclick = () => navigator.clipboard.writeText(x.declineEmail).then(() => { c2.textContent = 'Copied'; setTimeout(() => c2.textContent = 'Copy email', 1500); });
+    det.append(c2); d.append(det);
+  }
+  $('results').append(d);
+}
 }
 </script>
 </body>
