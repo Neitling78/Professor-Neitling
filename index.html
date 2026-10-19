@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Professor Neitling</title>
+<meta name="description" content="Professor Cassandra Neitling, Microbiology at Folsom Lake College: course information, assignments and grading, recommendation letter requests, and career resources.">
+<meta property="og:title" content="Professor Cassandra Neitling · Microbiology">
+<meta property="og:description" content="Course information, assignments and grading, recommendation letter requests, and career resources.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1f6f5c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6f5c'/%3E%3Cellipse cx='32' cy='32' rx='18' ry='11' fill='none' stroke='white' stroke-width='4' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='27' cy='34' r='3' fill='white'/%3E%3Ccircle cx='37' cy='29' r='3' fill='white'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --ink:#1d2321; --muted:#5d6763; --line:#e3e1da;
+  --accent:#1f6f5c; --accent-ink:#ffffff; --accent-soft:#e3f0ec; --warn:#8a5a00; --warn-soft:#fff4dc;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 24px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#121614; --surface:#1a201d; --ink:#e8ece9; --muted:#9aa5a0; --line:#2a322e;
+    --accent:#5cc2a6; --accent-ink:#0c1512; --accent-soft:#1f2f2a; --warn:#f0c46a; --warn-soft:#2e2717;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121614; --surface:#1a201d; --ink:#e8ece9; --muted:#9aa5a0; --line:#2a322e;
+  --accent:#5cc2a6; --accent-ink:#0c1512; --accent-soft:#1f2f2a; --warn:#f0c46a; --warn-soft:#2e2717;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;line-height:1.2;margin:0 0 .5em}
+a{color:var(--accent)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+
+/* header */
+header{padding:48px 0 24px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:600;color:var(--accent)}
+header h1{font-size:clamp(32px,6vw,48px);margin:.2em 0 .15em}
+header p{color:var(--muted);margin:0;max-width:60ch}
+
+/* tabs */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 0}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px}
+.tabs a:hover{color:var(--ink);background:var(--accent-soft)}
+.tabs a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+
+main{padding:32px 0 64px}
+section[hidden]{display:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:20px}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.muted{color:var(--muted)}
+.tag{display:inline-block;font-size:13px;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 6px 6px 0}
+
+/* placeholder marker — remove once real content goes in */
+.ph{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:8px;padding:2px 8px;font-size:14px}
+.ph-block{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:10px;padding:14px 16px;font-size:14px;margin:8px 0}
+/* Placeholders are visible only in preview mode (add ?draft=1 to the URL). Live visitors never see them. */
+body:not(.draft) .ph, body:not(.draft) .ph-block{display:none}
+body.draft .live-only{display:none}
+body:not(.draft) .draft-only{display:none}
+.draft-banner{display:none}
+body.draft .draft-banner{display:block;background:var(--warn-soft);color:var(--warn);text-align:center;font-size:13px;padding:6px 16px;border-bottom:1px dashed var(--warn)}
+
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.table-scroll{overflow-x:auto}
+
+/* form */
+form .row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+label{display:block;font-weight:500;font-size:14px;margin:16px 0 6px}
+label .req{color:var(--accent)}
+.hint{font-weight:400;color:var(--muted);font-size:13px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+fieldset{border:0;padding:0;margin:28px 0 0}
+legend{font-family:Fraunces,Georgia,serif;font-size:20px;font-weight:650;padding:0}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.check input{width:auto;margin-top:5px}
+.hp{position:absolute;left:-9999px}
+button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:12px 24px;cursor:pointer;margin-top:24px}
+button:disabled{opacity:.6;cursor:default}
+.notice{border-radius:10px;padding:14px 16px;margin-top:16px;background:var(--accent-soft);color:var(--ink)}
+
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
+@media (max-width:520px){.card{padding:18px}}
+</style>
+</head>
+<body>
+<div class="draft-banner">Preview mode: yellow boxes are placeholders and are hidden from the public.</div>
+
+<header class="wrap">
+  <div class="eyebrow">Microbiology</div>
+  <h1>Professor Cassandra Neitling</h1>
+  <p>Professor of Microbiology · Folsom Lake College</p>
+</header>
+
+<nav aria-label="Sections">
+  <div class="wrap tabs" role="tablist">
+    <a href="#about">About Microbiology</a>
+    <a href="#schedule">Class Schedule</a>
+    <a href="#assignments">Assignments &amp; Grading</a>
+    <a href="#letters">Recommendation Letters</a>
+    <a href="#careers">Career Opportunities</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ABOUT -->
+  <section id="about" data-tab>
+    <div class="card">
+      <h2>About Microbiology</h2>
+      <p>Microbiology is the study of the bacteria, viruses, fungi, protozoa and helminths that shape human health. In <strong>BIOL 442: General Microbiology and Public Health</strong>, students examine how these organisms are built, how they live and reproduce, how they cause disease, and how we identify, treat and prevent infection, from individual patients to global epidemics and pandemics.</p>
+      <p>The course is taught as preparation for careers in healthcare. Most students are headed toward nursing and other health professions, and the lab is where much of the learning happens: microscopy, culturing bacteria, and identifying unknown microorganisms from a simulated patient infection.</p>
+      <div class="ph-block">PLACEHOLDER: a short personal welcome from Professor Neitling, in her own words.</div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Education</h3>
+        <p style="margin:0 0 6px"><strong>Cornell University</strong><br><span class="muted">Undergraduate degree</span> <span class="ph">degree &amp; field</span></p>
+        <p style="margin:0"><strong>Harvard University</strong><br><span class="muted">Master's degree</span> <span class="ph">degree &amp; field</span></p>
+      </div>
+      <div class="card">
+        <h3>Knowledge, Skills &amp; Abilities</h3>
+        <span class="tag">Microbiology</span><span class="tag">Infectious disease</span><span class="tag">Epidemiology &amp; public health</span><span class="tag">Microscopy</span><span class="tag">Bacterial culture &amp; transfer</span><span class="tag">Unknown identification</span><span class="tag">Biochemical testing</span><span class="tag">DNA techniques</span><span class="tag">Diagnostic media</span><span class="tag">Anatomy &amp; physiology</span><span class="tag">Pre-health advising</span>
+      </div>
+      <div class="card">
+        <h3>Teaching Philosophy</h3>
+        <p style="margin:0 0 10px">“I am committed to creating a course that is inclusive in its design.”</p>
+        <p class="muted" style="margin:0;font-size:14px">From her course syllabus.</p>
+        <div class="ph-block">PLACEHOLDER: a fuller statement in her own words.</div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>What students learn</h3>
+      <p class="muted" style="margin-top:0">By the end of BIOL 442, students can:</p>
+      <ul>
+        <li>Apply microbiology concepts to current issues in human health, biotechnology, infectious disease and the environment.</li>
+        <li>Analyze how the human body interacts with microorganisms through symbiotic relationships and defense mechanisms.</li>
+        <li>Evaluate the role microbes play in epidemiology, and the methods used to control the spread of disease.</li>
+        <li>Conduct experiments involving culture and transfer of microbes, microscopy, biochemical tests, DNA techniques and diagnostic media.</li>
+        <li>Evaluate infectious diseases: causative agents, signs and symptoms, pathogenesis, virulence, epidemiology, diagnosis, treatment and prevention.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" data-tab hidden>
+    <div class="card">
+      <h2>Class Schedule</h2>
+      <p class="muted">Fall 2026</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Course</th><th>Title</th><th>Units</th><th>Format</th></tr></thead>
+          <tbody>
+            <tr><td><strong>BIOL 442</strong></td><td>General Microbiology and Public Health</td><td>5</td><td>3 units lecture (54 hrs) + 2 units lab (108 hrs)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="font-size:14px;margin-top:14px">Meeting days, times and rooms are listed in the official Folsom Lake College class schedule. Search “BIOL 442.” Course materials are in Canvas under Modules.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Prerequisite</h3>
+        <p style="margin-top:0">CHEM 305 (Introduction to Chemistry) or CHEM 400 (General Chemistry I) with a grade of C or better.</p>
+        <p class="muted" style="font-size:14px">Equivalent chemistry courses from other colleges may qualify. Bring official or unofficial transcripts to the first day of class.</p>
+      </div>
+      <div class="card">
+        <h3>Recommended first</h3>
+        <p style="margin-top:0">Some biology coursework helps: BIOL C1000 (Introduction to Biology with Lab), BIOL 310 (General Biology), or ENGWR 110 (College Reading and Writing Skills).</p>
+      </div>
+      <div class="card">
+        <h3>Textbook &amp; Lab Manual</h3>
+        <p style="margin-top:0"><em>Microbiology Fundamentals: A Clinical Approach</em>, 4th ed. (Cowan &amp; Smith), with the companion lab manual, 4th ed. (Obenauf &amp; Finazzo).</p>
+        <p class="muted" style="font-size:14px">Free PDF options are posted in Canvas.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Office Hours</h3>
+      <p style="margin:0">By appointment, in person or on Zoom. Please let Professor Neitling know in advance.</p>
+    </div>
+  </section>
+
+  <!-- ASSIGNMENTS -->
+  <section id="assignments" data-tab hidden>
+    <div class="card">
+      <h2>Major Assignments &amp; Grading</h2>
+      <p style="margin:0">BIOL 442 · Fall 2026 · <strong>500 points total</strong></p>
+    </div>
+    <div class="card">
+      <h3>Lecture: 220 points</h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td>Weekly quizzes</td><td>100</td><td>15-minute quiz each week from lecture and the book. Top 10 count, with 2 “freebies.” No make-ups.</td></tr>
+            <tr><td>Final exam</td><td>80</td><td>Cumulative, same format as the quizzes.</td></tr>
+            <tr><td>Notecards</td><td>25</td><td>One per lecture (1 pt each). Much of the final comes from these.</td></tr>
+            <tr><td>Library Research Project</td><td>15</td><td>One library session using PubMed and ChatGPT to answer a research question.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Laboratory: 280 points</h3>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td>Pre-lab reports</td><td>50</td><td>2 pts each: read the manual, watch the video, record it in your lab notebook. No late submissions.</td></tr>
+            <tr><td>Post-lab reports</td><td>50</td><td>2 pts each: perform the lab, record results, answer the questions.</td></tr>
+            <tr><td><strong>Unknown Bacteria Project</strong></td><td>50</td><td>Most of the second half of the semester: identify the bacteria in a mixed culture from “your patient's” infection.</td></tr>
+            <tr><td>Midterm lab practical</td><td>50</td><td>Microscopes and lab results to read and interpret.</td></tr>
+            <tr><td>Final lab practical</td><td>80</td><td>Covers every assay performed during the semester.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Grading Scale</h3>
+        <table>
+          <tbody>
+            <tr><td><strong>A</strong></td><td>450–500 pts (90%+)</td></tr>
+            <tr><td><strong>B</strong></td><td>400–449 pts</td></tr>
+            <tr><td><strong>C</strong></td><td>350–399 pts</td></tr>
+            <tr><td><strong>D</strong></td><td>300–349 pts</td></tr>
+            <tr><td><strong>F</strong></td><td>299 pts or below</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <h3>Extra Credit</h3>
+        <p style="margin-top:0">Up to 25 points total: an end-of-term final exam revision quiz (up to 10), weekly tutoring sessions with a past microbiology student (up to 10), and INDIS 314/315 study skills courses (up to 5).</p>
+        <p class="muted" style="font-size:14px">No free points. If you're one point from the next grade, extra credit is how you earn it.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Heading to nursing school?</h3>
+      <p style="margin:0">Most nursing programs require an A or B in Microbiology. Plan ahead, track your points, and reach out early if you're at risk of a C. Use every resource: office hours, embedded tutors, classmates and your Success Coach.</p>
+    </div>
+  </section>
+
+  <!-- LETTERS -->
+  <section id="letters" data-tab hidden>
+    <div class="card">
+      <h2>Request a Letter of Recommendation</h2>
+      <p>Fill out this form completely. The more specific you are, the stronger your letter can be.</p>
+      <div class="ph-block">PLACEHOLDER: Professor Neitling's policy — minimum notice before the deadline (e.g. 3 weeks), which students she writes for, and how letters are submitted.</div>
+      <div id="form-closed" class="notice" hidden>Letter requests will open here soon. In the meantime, please contact Professor Neitling directly.</div>
+
+      <form id="rec-form" novalidate>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <fieldset>
+          <legend>About you</legend>
+          <div class="row">
+            <div><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" required autocomplete="name"></div>
+            <div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          </div>
+          <div class="row">
+            <div><label for="pronouns">Pronouns to use in your letter <span class="req">*</span></label><input id="pronouns" name="pronouns" placeholder="e.g. she/her" required></div>
+            <div><label for="honorific">How the letter should refer to you <span class="req">*</span></label>
+              <select id="honorific" name="honorific" required><option value="">Choose…</option><option>Ms.</option><option>Mr.</option><option>Mx.</option><option>First name only</option></select></div>
+          </div>
+          <div class="row">
+            <div><label for="major">Intended major / field <span class="req">*</span></label><input id="major" name="major" required></div>
+            <div></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Your time in Professor Neitling's class</legend>
+          <div class="row">
+            <div><label for="course">Course(s) taken <span class="req">*</span></label><input id="course" name="course" placeholder="e.g. BIOL 442 Microbiology" required></div>
+            <div><label for="term">Term(s) <span class="req">*</span></label><input id="term" name="term" placeholder="e.g. Fall 2025" required></div>
+          </div>
+          <div class="row">
+            <div><label for="grade">Final grade <span class="hint">(if known)</span></label><input id="grade" name="grade"></div>
+            <div><label for="known">How well does she know you?</label>
+              <select id="known" name="known"><option value="">Choose…</option><option>Student in one course</option><option>Student in multiple courses</option><option>Lab assistant / tutor / research</option><option>Other</option></select></div>
+          </div>
+          <label for="memory">A moment from her class she might remember you by <span class="hint">— a project, a question you asked, a lab you led</span></label>
+          <textarea id="memory" name="memory"></textarea>
+        </fieldset>
+
+        <fieldset>
+          <legend>Where you're applying</legend>
+          <label for="programs">Schools / programs and their deadlines <span class="req">*</span> <span class="hint">— one per line</span></label>
+          <textarea id="programs" name="programs" placeholder="Sacramento State — B.S. Nursing — Feb 1, 2027" required></textarea>
+          <div class="row">
+            <div><label for="deadline">Earliest deadline <span class="req">*</span></label><input id="deadline" name="deadline" type="date" required></div>
+            <div></div>
+          </div>
+          <div class="row">
+            <div><label for="type">Type of program <span class="req">*</span></label>
+              <select id="type" name="type" required><option value="">Choose…</option><option>Transfer to 4-year university</option><option>Nursing / allied health</option><option>Graduate school</option><option>Medical / dental / pharmacy / PA</option><option>Scholarship</option><option>Job / internship</option><option>Other</option></select></div>
+            <div><label for="method">How the letter is submitted <span class="req">*</span></label>
+              <select id="method" name="method" required><option value="">Choose…</option><option>Common App / online portal (school emails her a link)</option><option>Email directly to the program</option><option>Other (explain below)</option></select></div>
+          </div>
+          <label class="check"><input type="checkbox" name="waived" id="waived"> I have waived (or will waive) my right to view this letter.</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Help her write a strong letter</legend>
+          <label for="goals">Your goals — why this program, and what you want to do after <span class="req">*</span></label>
+          <textarea id="goals" name="goals" required></textarea>
+          <label for="highlights">Accomplishments, work, volunteering, or activities <span class="hint">— especially science-related</span></label>
+          <textarea id="highlights" name="highlights"></textarea>
+          <label for="emphasize">Specific qualities you'd like the letter to emphasize</label>
+          <textarea id="emphasize" name="emphasize"></textarea>
+          <label for="challenges">Anything you overcame that you're comfortable having mentioned <span class="hint">(optional)</span></label>
+          <textarea id="challenges" name="challenges"></textarea>
+          <label for="resume">Link to your résumé or personal statement <span class="hint">(Google Drive or similar, set to "anyone with the link")</span></label>
+          <input id="resume" name="resume" type="url" placeholder="https://">
+        </fieldset>
+
+        <p class="muted" style="font-size:14px;margin-top:24px">Privacy: your answers go only to Professor Neitling and are used only to write your letter. They are not published on this site.</p>
+        <label class="check"><input type="checkbox" id="confirm" required> The information above is accurate, and I understand a request is not a guarantee of a letter.</label>
+
+        <button type="submit" id="submit">Submit request</button>
+        <div id="form-msg" class="notice" hidden></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section id="careers" data-tab hidden>
+    <div class="card">
+      <h2>Career Opportunities in Microbiology</h2>
+      <p class="live-only muted" style="margin:0">Career resources are coming soon.</p>
+      <div class="ph-block">PLACEHOLDER: career paths, with sources cited. Content to be decided with Casie (transfer pathways, clinical lab, public health, biotech, research, etc.).</div>
+    </div>
+    <div class="grid">
+      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">© <span id="yr"></span> Cassandra Neitling · Personal faculty page, not an official Folsom Lake College website. Official course listings are on the college's class schedule.</footer>
+
+<script>
+// ---- Settings: fill in once the Apps Script backend is deployed ----
+const FORM_ENDPOINT = ""; // Apps Script web app URL goes here
+
+// Preview mode: add ?draft=1 to the URL to see placeholders
+const DRAFT = new URLSearchParams(location.search).has('draft');
+if (DRAFT) document.body.classList.add('draft');
+
+// Until the engine is connected, the live form is closed (preview mode still shows it)
+if (!FORM_ENDPOINT && !DRAFT) {
+  document.getElementById('form-closed').hidden = false;
+  document.getElementById('rec-form').hidden = true;
+}
+
+// Tabs (hash-based so each tab has its own shareable link, e.g. /#letters)
+const tabs = [...document.querySelectorAll('[data-tab]')];
+const links = [...document.querySelectorAll('.tabs a')];
+function show(){
+  const id = (location.hash || '#about').slice(1);
+  const target = tabs.find(t => t.id === id) ? id : 'about';
+  tabs.forEach(t => t.hidden = t.id !== target);
+  links.forEach(a => a.getAttribute('href') === '#'+target ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+}
+addEventListener('hashchange', () => { show(); scrollTo({top:0}); });
+show();
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Letter request form
+const form = document.getElementById('rec-form');
+const msg = document.getElementById('form-msg');
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (form.website.value) return;              // spam trap
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const data = Object.fromEntries(new FormData(form));
+  data.waived = form.waived.checked ? 'Yes' : 'No';
+  delete data.website;
+  const btn = document.getElementById('submit');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  data.submittedFrom = location.href;
+  try {
+    if (!FORM_ENDPOINT) throw new Error('not-connected');
+    // text/plain keeps this a "simple" request, which Apps Script web apps accept
+    const res = await fetch(FORM_ENDPOINT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data), redirect:'follow' });
+    const out = await res.json().catch(() => ({}));
+    if (!res.ok || out.ok !== true) throw new Error(out.error || 'failed');
+    form.reset();
+    msg.textContent = 'Thank you, your request was received. A confirmation email is on its way, and Professor Neitling will be in touch.';
+  } catch (err) {
+    msg.textContent = err.message === 'not-connected'
+      ? 'Preview only: the form is not connected yet. Nothing was sent.'
+      : 'Something went wrong. Please try again, or email Professor Neitling directly.';
+  }
+  msg.hidden = false; btn.disabled = false; btn.textContent = 'Submit request';
+});
+</script>
+</body>
+</html>
