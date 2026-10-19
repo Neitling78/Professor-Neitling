@@ -354,7 +354,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 
 <script>
 // ---- Settings: fill in once the Apps Script backend is deployed ----
-const FORM_ENDPOINT = ""; // Apps Script web app URL goes here
+const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbywKGPsB7miLhSPE-0BkiLF2glHIsFhABrbg0uRZzAajixAlDLoPByoDBC0_WMgcKxc/exec"; // Apps Script web app (letter engine)
 
 // Preview mode: add ?draft=1 to the URL to see placeholders
 const DRAFT = new URLSearchParams(location.search).has('draft');
@@ -397,13 +397,14 @@ form.addEventListener('submit', async e => {
     // text/plain keeps this a "simple" request, which Apps Script web apps accept
     const res = await fetch(FORM_ENDPOINT, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(data), redirect:'follow' });
     const out = await res.json().catch(() => ({}));
-    if (!res.ok || out.ok !== true) throw new Error(out.error || 'failed');
-    form.reset();
-    msg.textContent = 'Thank you, your request was received. A confirmation email is on its way, and Professor Neitling will be in touch.';
+    if (!res.ok || out.ok !== true) throw new Error(out.error || 'failed');    form.reset();
+    msg.textContent = 'Thank you, your request was received. Your reference number is ' + out.id + '. Please save it (a screenshot works). Professor Neitling will contact you if she needs anything else.';
   } catch (err) {
     msg.textContent = err.message === 'not-connected'
       ? 'Preview only: the form is not connected yet. Nothing was sent.'
-      : 'Something went wrong. Please try again, or email Professor Neitling directly.';
+      : err.message === 'rate_limited'
+        ? 'You have submitted several requests in the last hour. Please wait an hour and try again.'
+        : 'Something went wrong and your request was not sent. Please try again, or contact Professor Neitling directly.';
   }
   msg.hidden = false; btn.disabled = false; btn.textContent = 'Submit request';
 });
