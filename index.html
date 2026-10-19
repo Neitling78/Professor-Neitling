@@ -4,58 +4,245 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Professor Neitling</title>
-<meta name="description" content="Professor Cassandra Neitling, Microbiology at Folsom Lake College: course information, assignments and grading, recommendation letter requests, and career resources.">
+<meta name="description" content="Professor Cassandra Neitling, Microbiology at Folsom Lake College: course information, class schedule, assignments and grading, recommendation letter requests, and career resources.">
 <meta property="og:title" content="Professor Cassandra Neitling · Microbiology">
-<meta property="og:description" content="Course information, assignments and grading, recommendation letter requests, and career resources.">
+<meta property="og:description" content="Course information, class schedule, assignments and grading, recommendation letter requests, and career resources.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0e6e8c">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e6e8c'/%3E%3Cellipse cx='32' cy='32' rx='18' ry='11' fill='none' stroke='white' stroke-width='4' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='27' cy='34' r='3' fill='white'/%3E%3Ccircle cx='37' cy='29' r='3' fill='white'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0a3442">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a3442'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3ECN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f7f7; --surface:#ffffff; --ink:#13202a; --muted:#56636d; --line:#dde2e5; --grid:rgba(19,32,42,.045);
-  --accent:#0e6e8c; --accent-2:#5b6b78; --accent-ink:#ffffff; --accent-soft:#e9f2f6;
+  --bg:#ffffff; --bg-alt:#f3f6f7; --surface:#ffffff; --ink:#132028; --muted:#55636c; --line:#dbe2e6;
+  --brand:#0a3442; --brand-2:#0c4a5e; --brand-ink:#ffffff; --brand-muted:#b8d3dc;
+  --accent:#0e6e8c; --accent-hover:#0a5670; --accent-ink:#ffffff; --accent-soft:#e8f2f6;
+  --gold:#c4923a;
   --warn:#8a5a00; --warn-soft:#fff4dc;
-  --radius:6px; --shadow:0 1px 2px rgba(16,32,42,.05);
-  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:Inter,system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --radius:6px; --shadow:0 1px 2px rgba(10,40,52,.06),0 8px 24px rgba(10,40,52,.07); --shadow-lg:0 18px 48px rgba(10,40,52,.16);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#0b1317; --surface:#111b20; --ink:#e4ebee; --muted:#92a1aa; --line:#223038; --grid:rgba(228,235,238,.04);
-    --accent:#5fb6d3; --accent-2:#8796a1; --accent-ink:#071116; --accent-soft:#12262e; --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none;
+    --bg:#0b1418; --bg-alt:#0f1b20; --surface:#122128; --ink:#e3eaed; --muted:#93a3ab; --line:#22343c;
+    --brand:#06222c; --brand-2:#0a3442; --brand-muted:#9fbfca;
+    --accent:#5fb6d3; --accent-hover:#7fc7df; --accent-ink:#06161c; --accent-soft:#13303a;
+    --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none; --shadow-lg:0 18px 48px rgba(0,0,0,.45);
   }
 }
 :root[data-theme="dark"]{
-  --bg:#0b1317; --surface:#111b20; --ink:#e4ebee; --muted:#92a1aa; --line:#223038; --grid:rgba(228,235,238,.04);
-  --accent:#5fb6d3; --accent-2:#8796a1; --accent-ink:#071116; --accent-soft:#12262e; --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none;
+  --bg:#0b1418; --bg-alt:#0f1b20; --surface:#122128; --ink:#e3eaed; --muted:#93a3ab; --line:#22343c;
+  --brand:#06222c; --brand-2:#0a3442; --brand-muted:#9fbfca;
+  --accent:#5fb6d3; --accent-hover:#7fc7df; --accent-ink:#06161c; --accent-soft:#13303a;
+  --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none; --shadow-lg:0 18px 48px rgba(0,0,0,.45);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+html{scroll-padding-top:70px}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0 0 .5em;letter-spacing:-.005em}
+h2{font-size:clamp(26px,3.4vw,34px)}
+h3{font-size:20px}
 a{color:var(--accent)}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+a:hover{color:var(--accent-hover)}
+img{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+@media (min-width:700px){.wrap{padding:0 28px}}
 .mono{font-family:var(--mono)}
-
-/* tabs: understated, underline style */
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:14.5px;padding:14px 14px 12px;border-bottom:2px solid transparent}
-.tabs a:hover{color:var(--ink)}
-.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
-
-main{padding:36px 0 72px}
-section[hidden]{display:none}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:20px}
-.card h2{font-size:28px}
-.card h3{font-size:20px}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .muted{color:var(--muted)}
-.tag{display:inline-block;font:500 12.5px/1.4 var(--mono);padding:4px 9px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--bg);margin:0 6px 8px 0}
-.sec{display:block;font:500 12px/1 var(--mono);letter-spacing:.14em;color:var(--accent);margin-bottom:10px;text-transform:uppercase}
+.small{font-size:14px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--accent);color:var(--accent-ink);padding:10px 16px;z-index:50}
+.skip:focus{left:8px;top:8px}
+.icon{width:1em;height:1em;flex:none}
+
+/* ---------- utility bar ---------- */
+.utility{background:var(--brand);color:var(--brand-muted);font-size:13px}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:38px}
+.utility a{color:#fff;text-decoration:none;opacity:.9}
+.utility a:hover{opacity:1;text-decoration:underline;color:#fff}
+.utility ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.utility .ext::after{content:" ↗";opacity:.7}
+@media (max-width:640px){.utility .u-left{display:none}.utility .wrap{justify-content:center}.utility ul{gap:16px}}
+
+/* ---------- masthead ---------- */
+.masthead{background:var(--surface);border-bottom:1px solid var(--line)}
+.masthead .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:18px;padding-bottom:18px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--ink)}
+.brand:hover{color:var(--ink)}
+.mark{width:52px;height:52px;flex:none;display:grid;place-items:center;background:var(--brand);color:#fff;border-radius:4px;font:700 22px/1 var(--serif);letter-spacing:.02em;position:relative}
+.mark::after{content:"";position:absolute;left:8px;right:8px;bottom:8px;height:2px;background:var(--gold)}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-name{font:600 clamp(18px,2.4vw,23px)/1.15 var(--serif)}
+.brand-sub{font-size:13px;color:var(--muted);letter-spacing:.02em;margin-top:3px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1 var(--sans);text-decoration:none;border-radius:4px;padding:13px 22px;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-primary:hover{background:var(--accent-hover);color:var(--accent-ink)}
+.btn-light{background:#fff;color:var(--brand)}
+.btn-light:hover{background:#e8f2f6;color:var(--brand)}
+.btn-ghost{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
+.btn-outline{border-color:var(--accent);color:var(--accent);background:transparent}
+.btn-outline:hover{background:var(--accent);color:var(--accent-ink)}
+@media (max-width:640px){.masthead .btn{display:none}}
+
+/* ---------- primary nav ---------- */
+.mainnav{position:sticky;top:0;z-index:20;background:var(--brand-2);box-shadow:0 2px 10px rgba(0,0,0,.12)}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{white-space:nowrap;text-decoration:none;color:#e6f0f3;font-weight:600;font-size:15px;padding:17px 20px 15px;border-bottom:3px solid transparent;transition:background .15s}
+.tabs a:first-child{margin-left:-20px}
+.tabs a:hover{background:rgba(255,255,255,.08);color:#fff}
+.tabs a[aria-current="page"]{color:#fff;border-bottom-color:var(--gold);background:rgba(255,255,255,.06)}
+@media (max-width:640px){.tabs a{padding:15px 14px 13px;font-size:14px}.tabs a:first-child{margin-left:-14px}}
+
+/* ---------- hero (home) ---------- */
+.hero{position:relative;overflow:hidden;color:#fff;
+  background:radial-gradient(1100px 500px at 85% -10%,rgba(95,182,211,.28),transparent 60%),radial-gradient(800px 400px at -10% 110%,rgba(196,146,58,.14),transparent 60%),linear-gradient(160deg,#0a3442 0%,#082a35 55%,#061e27 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px;mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:120px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 12.5px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brand-muted)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold)}
+.hero h1{font-size:clamp(38px,5.8vw,64px);font-weight:600;margin:.35em 0 .35em;letter-spacing:-.018em;color:#fff}
+.lede{font-size:clamp(17px,2vw,20px);color:#cfe0e6;margin:0 0 30px;max-width:52ch;line-height:1.6}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.portrait{position:relative;margin:0;justify-self:end;width:min(100%,380px)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:4px;box-shadow:var(--shadow-lg)}
+.portrait::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid rgba(196,146,58,.55);border-radius:4px;z-index:-1}
+.portrait figcaption{position:absolute;left:-1px;bottom:22px;background:#fff;color:var(--brand);padding:10px 16px;font:600 13px/1.3 var(--sans);box-shadow:var(--shadow);border-left:3px solid var(--gold)}
+.portrait figcaption span{display:block;font:500 11px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#55636c;margin-top:2px}
+.dna{position:absolute;left:0;right:0;bottom:0;display:block;width:100%;height:64px;color:rgba(255,255,255,.28);pointer-events:none}
+.dna .s2{color:rgba(196,146,58,.45)}
+
+/* quick links overlapping hero */
+.quick{position:relative;z-index:2;margin-top:-72px}
+.quick ul{list-style:none;margin:0;padding:10px;display:grid;grid-template-columns:repeat(6,1fr);background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow-lg);border:1px solid var(--line)}
+.quick a{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;text-decoration:none;color:var(--ink);font-weight:600;font-size:14.5px;padding:20px 8px;border-radius:4px;transition:background .15s}
+.quick a:hover{background:var(--accent-soft);color:var(--ink)}
+.quick .circle{width:64px;height:64px;border-radius:50%;border:1.5px solid var(--accent);display:grid;place-items:center;color:var(--accent);transition:background .15s,color .15s}
+.quick a:hover .circle{background:var(--accent);color:var(--accent-ink)}
+.quick .circle svg{width:28px;height:28px}
+@media (max-width:860px){.quick ul{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:420px){.quick a{font-size:13px;padding:14px 4px}.quick .circle{width:54px;height:54px}.quick .circle svg{width:24px;height:24px}}
+
+/* ---------- interior page header ---------- */
+.pagehead{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,#0a3442,#061e27)}
+.pagehead::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:32px 32px}
+.pagehead .wrap{position:relative;padding-top:38px;padding-bottom:44px}
+.crumbs{font-size:13px;color:var(--brand-muted);margin-bottom:12px}
+.crumbs a{color:#fff;text-decoration:none}
+.crumbs a:hover{text-decoration:underline;color:#fff}
+.crumbs span{margin:0 8px;opacity:.6}
+.pagehead h1{font-size:clamp(32px,4.6vw,48px);color:#fff;margin:0 0 .3em}
+.pagehead p{margin:0;color:#cfe0e6;font-size:clamp(16px,1.9vw,18px);max-width:62ch}
+
+/* ---------- content bands ---------- */
+section[hidden]{display:none}
+.band{padding:72px 0}
+.band.alt{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.band.tight{padding:48px 0}
+.home .band:first-of-type{padding-top:64px}
+.kicker{display:flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+.kicker::before{content:"";width:22px;height:2px;background:var(--gold)}
+.intro{max-width:70ch}
+.intro p{font-size:17.5px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.split{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;align-items:start}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.card.top{border-top:3px solid var(--accent)}
+.card .ic{width:44px;height:44px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:16px}
+.card .ic svg{width:22px;height:22px}
+.tag{display:inline-block;font:500 13px/1.4 var(--sans);padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);background:var(--surface);margin:0 8px 10px 0}
+@media (max-width:860px){.two,.split{grid-template-columns:1fr;gap:36px}.band{padding:52px 0}}
+
+/* stats strip */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0}
+.stats div{padding:26px 20px;border-right:1px solid var(--line)}
+.stats div:last-child{border-right:0}
+.stats dt{font:500 11.5px/1.3 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.stats dd{margin:0;font:600 clamp(24px,3vw,34px)/1.1 var(--serif);color:var(--ink)}
+.stats dd small{display:block;font:400 14px/1.4 var(--sans);color:var(--muted);margin-top:6px}
+@media (max-width:760px){.stats{grid-template-columns:1fr 1fr}.stats div:nth-child(2){border-right:0}.stats div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* welcome feature */
+.welcome-band{background:var(--brand);color:#fff;position:relative;overflow:hidden}
+.welcome-band::after{content:"\201C";position:absolute;right:4%;top:-60px;font:700 340px/1 var(--serif);color:rgba(255,255,255,.05);pointer-events:none}
+.welcome-band .wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px;position:relative}
+.welcome-band img{width:220px;height:220px;object-fit:cover;object-position:50% 22%;border-radius:50%;border:4px solid rgba(255,255,255,.12)}
+.welcome-band .kicker{color:var(--brand-muted)}
+.welcome-band blockquote{margin:0}
+.welcome-band blockquote p{margin:0;font:italic 400 clamp(20px,2.5vw,27px)/1.55 var(--serif);color:#fff}
+.welcome-band cite{display:block;margin-top:22px;font:600 15px/1.3 var(--sans);font-style:normal;color:#fff}
+.welcome-band cite span{display:block;font-weight:400;color:var(--brand-muted);font-size:14px;margin-top:3px}
+@media (max-width:760px){.welcome-band .wrap{grid-template-columns:1fr;gap:28px;padding-top:56px;padding-bottom:56px}.welcome-band img{width:120px;height:120px}}
+
+/* specimen cards */
+.microbes{display:grid;gap:20px;grid-template-columns:repeat(5,1fr);margin-top:32px}
+.microbe{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.microbe:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.microbe .plate{background:linear-gradient(160deg,#0a3442,#061e27);color:#7fc7df;padding:22px 14px 16px;position:relative}
+.microbe .plate::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:16px 16px}
+.microbe .fig{position:relative;font:500 10.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted)}
+.microbe svg{position:relative;width:100%;height:80px;margin:12px 0 0;display:block}
+.microbe .body{padding:18px 18px 20px;flex:1}
+.microbe h3{margin:0 0 2px;font-size:20px}
+.microbe .eg{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px;margin:0 0 10px}
+.microbe .size{display:inline-block;font:500 12px/1.4 var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:3px;padding:3px 8px;margin:0 0 10px}
+.microbe p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+@media (max-width:1000px){.microbes{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.microbes{grid-template-columns:1fr 1fr}}
+@media (max-width:400px){.microbes{grid-template-columns:1fr}}
+
+/* outcomes list */
+.outcomes{list-style:none;margin:0;padding:0;counter-reset:o;display:grid;gap:0}
+.outcomes li{counter-increment:o;display:grid;grid-template-columns:52px 1fr;gap:8px;padding:18px 0;border-bottom:1px solid var(--line)}
+.outcomes li:first-child{border-top:1px solid var(--line)}
+.outcomes li::before{content:counter(o,decimal-leading-zero);font:500 14px/1.7 var(--mono);color:var(--accent)}
+
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font:600 12px/1.3 var(--sans);color:var(--muted);text-transform:uppercase;letter-spacing:.08em;background:var(--bg-alt);border-bottom:2px solid var(--line)}
+tbody tr:hover td{background:color-mix(in srgb,var(--accent-soft) 45%,transparent)}
+td.num{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.table-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.table-scroll table tr:last-child td{border-bottom:0}
+.table-cap{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin:0 0 14px}
+.table-cap h3{margin:0}
+.pill{display:inline-block;font:600 12px/1 var(--sans);letter-spacing:.04em;padding:6px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+
+/* section rows (schedule) */
+.meet{display:grid;gap:20px;grid-template-columns:1fr 1fr}
+.meet .card h3{display:flex;justify-content:space-between;align-items:center}
+.meet dl{margin:0;display:grid;grid-template-columns:90px 1fr;gap:10px 14px;font-size:15px}
+.meet dt{font:500 11.5px/1.9 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.meet dd{margin:0}
+@media (max-width:760px){.meet{grid-template-columns:1fr}}
+
+/* grade scale */
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.scale div{padding:20px 12px;text-align:center;border-right:1px solid var(--line)}
+.scale div:last-child{border-right:0}
+.scale b{display:block;font:600 34px/1 var(--serif);color:var(--accent);margin-bottom:8px}
+.scale span{font-size:13.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+@media (max-width:560px){.scale{grid-template-columns:repeat(5,minmax(0,1fr))}.scale b{font-size:26px}.scale span{font-size:12px}.scale div{padding:16px 4px}}
+
+/* points bar */
+.bar{display:flex;height:14px;border-radius:999px;overflow:hidden;margin:18px 0 10px;background:var(--line)}
+.bar span:first-child{background:var(--accent)}
+.bar span:last-child{background:var(--gold)}
+.legend{display:flex;gap:22px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:0}
+
+/* callout */
+.callout{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--accent-soft);border-left:4px solid var(--accent);border-radius:var(--radius);padding:24px 26px}
+.callout .ic{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center}
+.callout .ic svg{width:22px;height:22px}
+.callout h3{margin:0 0 6px}
+.callout p{margin:0}
 
 /* placeholder marker (visible only with ?draft=1) */
 .ph{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:4px;padding:2px 8px;font-size:14px}
@@ -66,94 +253,100 @@ body:not(.draft) .draft-only{display:none}
 .draft-banner{display:none}
 body.draft .draft-banner{display:block;background:var(--warn-soft);color:var(--warn);text-align:center;font-size:13px;padding:6px 16px;border-bottom:1px dashed var(--warn)}
 
-table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font:500 11.5px/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-td:nth-child(2){font-variant-numeric:tabular-nums}
-.table-scroll{overflow-x:auto}
+/* ---------- letters ---------- */
+.letters-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.aside{position:sticky;top:80px;display:grid;gap:20px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 18px 44px;font-size:15px}
+.steps li:last-child{padding-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:600 14px/28px var(--sans);text-align:center}
+.steps li::after{content:"";position:absolute;left:13.5px;top:32px;bottom:4px;width:1px;background:var(--line)}
+.steps li:last-child::after{display:none}
+.steps strong{display:block}
+@media (max-width:960px){.letters-layout{grid-template-columns:1fr}.aside{position:static;order:-1}}
 
-/* form */
 form .row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-label{display:block;font-weight:500;font-size:14px;margin:16px 0 6px}
-label .req{color:var(--accent)}
+label{display:block;font-weight:600;font-size:14px;margin:18px 0 7px}
+label .req{color:#b4402f}
 .hint{font-weight:400;color:var(--muted);font-size:13px}
-input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px}
-textarea{min-height:110px;resize:vertical}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-fieldset{border:0;padding:0;margin:32px 0 0}
-legend{font-family:var(--serif);font-size:21px;font-weight:600;padding:0}
-.check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
-.check input{width:auto;margin-top:5px}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--surface);border:1px solid #b9c5cb;border-radius:4px;padding:11px 13px;transition:border-color .15s,box-shadow .15s}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) input,:root:not([data-theme="light"]) select,:root:not([data-theme="light"]) textarea{border-color:var(--line);background:var(--bg)}}
+:root[data-theme="dark"] input,:root[data-theme="dark"] select,:root[data-theme="dark"] textarea{border-color:var(--line);background:var(--bg)}
+textarea{min-height:120px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 25%,transparent)}
+fieldset{border:0;padding:0;margin:0 0 0;padding-top:30px;margin-top:30px;border-top:1px solid var(--line)}
+fieldset:first-of-type{margin-top:6px;border-top:0;padding-top:0}
+legend{float:left;width:100%;display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;font-weight:600;padding:0;margin-bottom:4px}
+legend + *{clear:both}
+legend .n{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);font:600 13px/1 var(--sans);flex:none}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:15px}
+.check input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--accent)}
 .hp{position:absolute;left:-9999px}
-button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:4px;padding:12px 24px;cursor:pointer;margin-top:24px;letter-spacing:.01em}
+button{font:600 15px/1 var(--sans);background:var(--accent);color:var(--accent-ink);border:0;border-radius:4px;padding:15px 28px;cursor:pointer;margin-top:24px;letter-spacing:.01em}
+button:hover{background:var(--accent-hover)}
 button:disabled{opacity:.6;cursor:default}
-.school{border:1px solid var(--line);border-radius:var(--radius);padding:4px 16px 16px;margin-top:16px;background:var(--bg)}
-.school-head{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-.school-num{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:10px 18px;margin-top:14px}
+.school{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:4px 18px 18px;margin-top:16px;background:var(--bg-alt)}
+.school-head{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.school-num{font:600 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+button.secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:12px 20px;margin-top:16px}
+button.secondary:hover{background:var(--accent);color:var(--accent-ink)}
 button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:500;font-size:14px;text-decoration:underline}
-.notice{border-radius:var(--radius);padding:14px 16px;margin-top:16px;background:var(--accent-soft);color:var(--ink);border-left:3px solid var(--accent)}
+.notice{border-radius:var(--radius);padding:16px 18px;margin-top:18px;background:var(--accent-soft);color:var(--ink);border-left:4px solid var(--accent)}
 
-/* ---------- hero ---------- */
-.hero{position:relative;overflow:hidden;padding:56px 0 0;border-bottom:1px solid var(--line);
-  background-color:var(--bg);
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:24px 24px}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-bottom:36px}
-.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-.hero h1{font-size:clamp(36px,5.6vw,58px);font-weight:600;margin:.35em 0 .3em;letter-spacing:-.015em}
-.lede{font-size:clamp(16px,2vw,19px);color:var(--muted);margin:0 0 26px;max-width:50ch}
-.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0;max-width:520px}
-.facts div{padding:12px 22px 12px 0;margin-right:22px;border-right:1px solid var(--line)}
-.facts div:last-child{border-right:0;margin-right:0}
-.facts dt{font:500 11px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.facts dd{margin:0;font-family:var(--serif);font-size:18px;font-weight:600}
-.portrait{position:relative;margin:0;justify-self:end;width:min(100%,330px);padding:10px;background:var(--surface);border:1px solid var(--line)}
-.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
-/* reticle corner marks, like a microscope field */
-.portrait::before,.portrait::after{content:"";position:absolute;width:18px;height:18px;border:1.5px solid var(--accent)}
-.portrait::before{top:-7px;left:-7px;border-right:0;border-bottom:0}
-.portrait::after{bottom:-7px;right:-7px;border-left:0;border-top:0}
-.portrait figcaption{font:500 11.5px/1.4 var(--mono);letter-spacing:.06em;color:var(--muted);padding:10px 2px 0;display:flex;justify-content:space-between}
-/* DNA double helix (drawn by script) */
-.dna{display:block;width:100%;height:58px;margin:0;color:var(--accent)}
-.dna .s2{color:var(--accent-2)}
+/* empty state */
+.empty{text-align:center;padding:64px 24px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--bg-alt)}
+.empty .ic{margin:0 auto 18px;width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.empty .ic svg{width:30px;height:30px}
 
-/* specimen plates */
-.microbes{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:14px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.microbe{padding:20px 18px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);transition:background .2s}
-.microbe:hover{background:var(--accent-soft)}
-.microbe .fig{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.microbe svg{width:100%;height:84px;margin:14px 0 12px;display:block;color:var(--accent)}
-.microbe h3{margin:0 0 2px;font-size:19px}
-.microbe .eg{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px;margin:0 0 8px}
-.microbe .size{font:500 12px/1.4 var(--mono);color:var(--accent);margin:0 0 8px}
-.microbe p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+/* ---------- footer ---------- */
+.foot-main{background:var(--bg-alt);border-top:1px solid var(--line);padding:56px 0 44px;font-size:15px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.foot-grid h4{font:600 12px/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+.foot-grid ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.foot-grid a{color:var(--ink);text-decoration:none}
+.foot-grid a:hover{color:var(--accent);text-decoration:underline}
+.foot-grid address{font-style:normal;color:var(--muted);line-height:1.6}
+.foot-brand{display:flex;gap:14px;align-items:flex-start}
+.foot-brand .mark{width:46px;height:46px;font-size:19px}
+.foot-band{background:var(--brand-2);color:#d6e7ec;font-size:14px}
+.foot-band .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+.foot-band a{color:#fff;text-decoration:none}
+.foot-band a:hover{text-decoration:underline;color:#fff}
+.foot-band ul{display:flex;flex-wrap:wrap;gap:8px 24px;list-style:none;margin:0;padding:0}
+.foot-legal{background:var(--brand);color:var(--brand-muted);font-size:13px}
+.foot-legal .wrap{padding-top:16px;padding-bottom:18px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+@media (max-width:860px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid > :first-child{grid-column:1/-1}}
+@media (max-width:480px){.foot-grid{grid-template-columns:1fr}}
 
-.welcome{margin:24px 0 0;padding:4px 0 4px 22px;border-left:2px solid var(--accent)}
-.welcome p{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6}
-.welcome footer{border:0;padding:12px 0 0;margin:0;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
-.welcome footer::before{content:"— "}
-
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13.5px}
 @media (max-width:760px){
-  .hero{padding-top:36px}
-  .hero-grid{grid-template-columns:1fr;gap:30px}
-  .portrait{justify-self:start;width:min(80%,300px);order:-1}
-  .facts{grid-template-columns:repeat(3,1fr)}
-  .facts div{padding-right:12px;margin-right:12px}
-  .facts dd{font-size:16px}
-  .card{padding:20px}
-  .card h2{font-size:24px}
+  .hero-grid{grid-template-columns:1fr;gap:36px;padding-top:44px;padding-bottom:110px}
+  .portrait{justify-self:start;width:min(78%,300px)}
+  .card{padding:22px}
 }
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <div class="draft-banner">Preview mode: yellow boxes are placeholders and are hidden from the public.</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <!-- Technical line drawings (stroke only), drawn for this site -->
+    <!-- UI icons (line style), drawn for this site -->
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M7.5 14h2M11 14h2M14.5 14h2M7.5 17h2M11 17h2"/></g></symbol>
+    <symbol id="i-grade" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M8.5 12.5l2.2 2.2 4.8-5"/><path d="M8.5 18h7"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
+    <symbol id="i-letter" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></g></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></g></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2"/><path d="M9 7.5V5.5a1.5 1.5 0 0 1 1.5-1.5h3A1.5 1.5 0 0 1 15 5.5v2"/><path d="M3 12.5h18M11 12.5v1.5h2v-1.5"/></g></symbol>
+    <symbol id="i-scope" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5l3 1.5-3.5 7-3-1.5z"/><path d="M10.5 8.5a6 6 0 0 1 3 10.5"/><path d="M5 20.5h14M8 17.5h7M7.5 11.5l1 3"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5L12 5l9.5 4.5L12 14z"/><path d="M6.5 11.5v4c1.5 1.5 3.5 2.2 5.5 2.2s4-.7 5.5-2.2v-4M21.5 9.5v5"/></g></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/><path d="M7.5 12h2.5l1.2-2.2 1.8 4.2 1.2-2h2.3"/></g></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3.5h5M10 3.5v6L4.8 18.3A1.5 1.5 0 0 0 6.1 20.5h11.8a1.5 1.5 0 0 0 1.3-2.2L14 9.5v-6"/><path d="M7.3 14.5h9.4"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.8l2.5 5.2 5.7.8-4.1 4 1 5.6-5.1-2.7-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/></g></symbol>
+
+    <!-- Specimen line drawings, drawn for this site -->
     <symbol id="m-bacillus" viewBox="0 0 200 84">
       <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
         <rect x="46" y="24" width="108" height="36" rx="18"/>
@@ -204,28 +397,29 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   </defs>
 </svg>
 
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
-      <div class="eyebrow">Microbiology &middot; Folsom Lake College</div>
-      <h1>Professor Cassandra Neitling</h1>
-      <p class="lede">Professor of Microbiology, teaching the biology of bacteria, viruses, fungi and parasites, and preparing students for careers in nursing and the health professions.</p>
-      <dl class="facts">
-        <div><dt>Course</dt><dd>BIOL 442</dd></div>
-        <div><dt>Units</dt><dd>5</dd></div>
-        <div><dt>Format</dt><dd>Lecture + Lab</dd></div>
-      </dl>
-    </div>
-    <figure class="portrait">
-      <img src="assets/casie-neitling.jpg" width="800" height="1000" alt="Professor Cassandra Neitling outdoors by a mountain lake" fetchpriority="high">
-      <figcaption><span>Prof. C. A. Neitling</span><span>Microbiology</span></figcaption>
-    </figure>
+<div class="utility">
+  <div class="wrap">
+    <span class="u-left">Faculty Page &middot; Microbiology &middot; Folsom Lake College</span>
+    <ul>
+      <li><a href="#schedule-office">Office Hours</a></li>
+      <li><a href="#letters">Request a Letter</a></li>
+      <li><a class="ext" href="https://flc.losrios.edu/" rel="noopener">FLC Website</a></li>
+    </ul>
   </div>
-  <svg class="dna" id="dna" aria-hidden="true" preserveAspectRatio="none"></svg>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#about" aria-label="Professor Cassandra Neitling, home">
+      <span class="mark" aria-hidden="true">CN</span>
+      <span class="brand-text"><span class="brand-name">Professor Cassandra Neitling</span><span class="brand-sub">Microbiology &middot; Folsom Lake College</span></span>
+    </a>
+    <a class="btn btn-primary" href="#letters"><svg class="icon" aria-hidden="true"><use href="#i-letter"/></svg>Request a Letter</a>
+  </div>
 </header>
 
-<nav aria-label="Sections">
-  <div class="wrap tabs" role="tablist">
+<nav class="mainnav" aria-label="Main">
+  <div class="wrap tabs">
     <a href="#about">About Microbiology</a>
     <a href="#schedule">Class Schedule</a>
     <a href="#assignments">Assignments &amp; Grading</a>
@@ -234,288 +428,496 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   </div>
 </nav>
 
-<main class="wrap">
+<!-- Interior page header (all tabs except home) -->
+<div class="pagehead" id="pagehead" hidden>
+  <div class="wrap">
+    <div class="crumbs"><a href="#about">Home</a><span aria-hidden="true">/</span><span id="ph-crumb" style="margin:0;opacity:1"></span></div>
+    <h1 id="ph-title"></h1>
+    <p id="ph-sub"></p>
+  </div>
+</div>
 
-  <!-- ABOUT -->
-  <section id="about" data-tab>
-    <div class="card">
-      <span class="sec">Section 01</span><h2>About Microbiology</h2>
-      <p>Microbiology is the study of the bacteria, viruses, fungi, protozoa and helminths that shape human health. In <strong>BIOL 442: General Microbiology and Public Health</strong>, students examine how these organisms are built, how they live and reproduce, how they cause disease, and how we identify, treat and prevent infection, from individual patients to global epidemics and pandemics.</p>
-      <p>The course is taught as preparation for careers in healthcare. Most students are headed toward nursing and other health professions, and the lab is where much of the learning happens: microscopy, culturing bacteria, and identifying unknown microorganisms from a simulated patient infection.</p>
-      <blockquote class="welcome">
-        <p>I love biology, and microbiology most of all: an invisible world that shapes every part of our health. My greatest joy is watching my students master challenging material, grow in confidence, and go on to successful careers in healthcare. If you are willing to put in the work, I will be right there with you every step of the way.</p>
-        <footer>Professor Neitling</footer>
-      </blockquote>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Education</h3>
-        <p style="margin:0 0 6px"><strong>Cornell University</strong><br><span class="muted">Undergraduate degree</span> <span class="ph">degree &amp; field</span></p>
-        <p style="margin:0"><strong>Harvard University</strong><br><span class="muted">Master's degree</span> <span class="ph">degree &amp; field</span></p>
-      </div>
-      <div class="card">
-        <h3>Knowledge, Skills &amp; Abilities</h3>
-        <span class="tag">Microbiology</span><span class="tag">Infectious disease</span><span class="tag">Epidemiology &amp; public health</span><span class="tag">Microscopy</span><span class="tag">Bacterial culture &amp; transfer</span><span class="tag">Unknown identification</span><span class="tag">Biochemical testing</span><span class="tag">DNA techniques</span><span class="tag">Diagnostic media</span><span class="tag">Anatomy &amp; physiology</span><span class="tag">Pre-health advising</span>
-      </div>
-      <div class="card">
-        <h3>Teaching Philosophy</h3>
-        <p style="margin:0 0 10px">“I am committed to creating a course that is inclusive in its design.”</p>
-        <p class="muted" style="margin:0;font-size:14px">From her course syllabus.</p>
-        <div class="ph-block">PLACEHOLDER: a fuller statement in her own words.</div>
-      </div>
-    </div>
-    <div class="card">
-      <span class="sec">Plates 1&ndash;5</span>
-      <h3>The organisms of microbiology</h3>
-      <p class="muted" style="margin-top:0">The five groups studied in BIOL 442, with typical sizes.</p>
-      <div class="microbes">
-        <div class="microbe"><div class="fig">Fig. 1</div><svg aria-hidden="true"><use href="#m-bacillus"/></svg><h3>Bacteria</h3><p class="eg">e.g. Escherichia, Staphylococcus</p><p class="size">0.5&ndash;5 &micro;m</p><p>Single cells without a nucleus. Most are harmless or essential; a few cause disease.</p></div>
-        <div class="microbe"><div class="fig">Fig. 2</div><svg aria-hidden="true"><use href="#m-virus"/></svg><h3>Viruses</h3><p class="eg">e.g. influenza, SARS-CoV-2</p><p class="size">20&ndash;300 nm</p><p>Not cells: genetic material in a protein coat that must take over a host cell to replicate.</p></div>
-        <div class="microbe"><div class="fig">Fig. 3</div><svg aria-hidden="true"><use href="#m-yeast"/></svg><h3>Fungi</h3><p class="eg">e.g. Candida, Aspergillus</p><p class="size">Yeast cells 3&ndash;10 &micro;m</p><p>Yeasts and molds. Some cause infections; others give us bread and penicillin.</p></div>
-        <div class="microbe"><div class="fig">Fig. 4</div><svg aria-hidden="true"><use href="#m-amoeba"/></svg><h3>Protozoa</h3><p class="eg">e.g. Plasmodium, Giardia</p><p class="size">10&ndash;200 &micro;m</p><p>Single cells with a nucleus that move and feed, including the parasite that causes malaria.</p></div>
-        <div class="microbe"><div class="fig">Fig. 5</div><svg aria-hidden="true"><use href="#m-worm"/></svg><h3>Helminths</h3><p class="eg">e.g. tapeworms, roundworms</p><p class="size">Millimeters to meters</p><p>Parasitic worms: multicellular animals, often visible without a microscope.</p></div>
-      </div>
-    </div>
-    <div class="card">
-      <h3>What students learn</h3>
-      <p class="muted" style="margin-top:0">By the end of BIOL 442, students can:</p>
-      <ul>
-        <li>Apply microbiology concepts to current issues in human health, biotechnology, infectious disease and the environment.</li>
-        <li>Analyze how the human body interacts with microorganisms through symbiotic relationships and defense mechanisms.</li>
-        <li>Evaluate the role microbes play in epidemiology, and the methods used to control the spread of disease.</li>
-        <li>Conduct experiments involving culture and transfer of microbes, microscopy, biochemical tests, DNA techniques and diagnostic media.</li>
-        <li>Evaluate infectious diseases: causative agents, signs and symptoms, pathogenesis, virulence, epidemiology, diagnosis, treatment and prevention.</li>
-      </ul>
-    </div>
-  </section>
+<main id="content">
 
-  <!-- SCHEDULE -->
-  <section id="schedule" data-tab hidden>
-    <div class="card">
-      <span class="sec">Section 02</span><h2>Class Schedule</h2>
-      <p class="muted">Fall 2026</p>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Course</th><th>Title</th><th>Units</th><th>Format</th></tr></thead>
-          <tbody>
-            <tr><td><strong>BIOL 442</strong></td><td>General Microbiology and Public Health</td><td>5</td><td>3 units lecture (54 hrs) + 2 units lab (108 hrs)</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3 style="margin-top:28px">Meeting Times <span class="mono muted" style="font-size:13px;font-weight:400">· Fall 2026</span></h3>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Section</th><th>Days</th><th>Lecture</th><th>Lab</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Group A</strong></td><td>Mon &amp; Wed</td><td>11:00&ndash;12:20 &middot; Oak Hall 108</td><td>1:00&ndash;4:05 &middot; Oak Hall 126</td></tr>
-            <tr><td><strong>Group B</strong></td><td>Tue &amp; Thu</td><td>11:00&ndash;12:20 &middot; Oak Hall 108</td><td>1:00&ndash;4:05 &middot; Oak Hall 126</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="muted" style="font-size:14px;margin-top:14px">Times are for Fall 2026. Always confirm in the official Folsom Lake College class schedule (search “BIOL 442”). Course materials are in Canvas under Modules.</p>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Prerequisite</h3>
-        <p style="margin-top:0">CHEM 305 (Introduction to Chemistry) or CHEM 400 (General Chemistry I) with a grade of C or better.</p>
-        <p class="muted" style="font-size:14px">Equivalent chemistry courses from other colleges may qualify. Bring official or unofficial transcripts to the first day of class.</p>
-      </div>
-      <div class="card">
-        <h3>Recommended first</h3>
-        <p style="margin-top:0">Some biology coursework helps: BIOL C1000 (Introduction to Biology with Lab), BIOL 310 (General Biology), or ENGWR 110 (College Reading and Writing Skills).</p>
-      </div>
-      <div class="card">
-        <h3>Textbook &amp; Lab Manual</h3>
-        <p style="margin-top:0"><em>Microbiology Fundamentals: A Clinical Approach</em>, 4th ed. (Cowan &amp; Smith), with the companion lab manual, 4th ed. (Obenauf &amp; Finazzo).</p>
-        <p class="muted" style="font-size:14px">Free PDF options are posted in Canvas.</p>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Office Hours</h3>
-      <table>
-        <tbody>
-          <tr><td><strong>Mon&ndash;Thu</strong></td><td>4:00&ndash;5:00</td></tr>
-          <tr><td><strong>Friday</strong></td><td>9:00&ndash;5:00 via Zoom</td></tr>
-        </tbody>
-      </table>
-      <p class="muted" style="font-size:14px;margin:12px 0 0">Please let Professor Neitling know in advance. Questions are also welcome during her on-campus hours, Mon&ndash;Thu 10:30&ndash;4:30.</p>
-    </div>
-  </section>
-
-  <!-- ASSIGNMENTS -->
-  <section id="assignments" data-tab hidden>
-    <div class="card">
-      <span class="sec">Section 03</span><h2>Major Assignments &amp; Grading</h2>
-      <p style="margin:0">BIOL 442 · Fall 2026 · <strong>500 points total</strong></p>
-    </div>
-    <div class="card">
-      <h3>Lecture: 220 points</h3>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
-          <tbody>
-            <tr><td>Weekly quizzes</td><td>100</td><td>15-minute quiz each week from lecture and the book. Top 10 count, with 2 “freebies.” No make-ups.</td></tr>
-            <tr><td>Final exam</td><td>80</td><td>Cumulative, same format as the quizzes.</td></tr>
-            <tr><td>Notecards</td><td>25</td><td>One per lecture (1 pt each). Much of the final comes from these.</td></tr>
-            <tr><td>Library Research Project</td><td>15</td><td>One library session using PubMed and ChatGPT to answer a research question.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Laboratory: 280 points</h3>
-      <div class="table-scroll">
-        <table>
-          <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
-          <tbody>
-            <tr><td>Pre-lab reports</td><td>50</td><td>2 pts each: read the manual, watch the video, record it in your lab notebook. No late submissions.</td></tr>
-            <tr><td>Post-lab reports</td><td>50</td><td>2 pts each: perform the lab, record results, answer the questions.</td></tr>
-            <tr><td><strong>Unknown Bacteria Project</strong></td><td>50</td><td>Most of the second half of the semester: identify the bacteria in a mixed culture from “your patient's” infection.</td></tr>
-            <tr><td>Midterm lab practical</td><td>50</td><td>Microscopes and lab results to read and interpret.</td></tr>
-            <tr><td>Final lab practical</td><td>80</td><td>Covers every assay performed during the semester.</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="grid">
-      <div class="card">
-        <h3>Grading Scale</h3>
-        <table>
-          <tbody>
-            <tr><td><strong>A</strong></td><td>450–500 pts (90%+)</td></tr>
-            <tr><td><strong>B</strong></td><td>400–449 pts</td></tr>
-            <tr><td><strong>C</strong></td><td>350–399 pts</td></tr>
-            <tr><td><strong>D</strong></td><td>300–349 pts</td></tr>
-            <tr><td><strong>F</strong></td><td>299 pts or below</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card">
-        <h3>Extra Credit</h3>
-        <p style="margin-top:0">Up to 25 points total: an end-of-term final exam revision quiz (up to 10), weekly tutoring sessions with a past microbiology student (up to 10), and INDIS 314/315 study skills courses (up to 5).</p>
-        <p class="muted" style="font-size:14px">No free points. If you're one point from the next grade, extra credit is how you earn it.</p>
-      </div>
-    </div>
-    <div class="card">
-      <h3>Heading to nursing school?</h3>
-      <p style="margin:0">Most nursing programs require an A or B in Microbiology. Plan ahead, track your points, and reach out early if you're at risk of a C. Use every resource: office hours, embedded tutors, classmates and your Success Coach.</p>
-    </div>
-  </section>
-
-  <!-- LETTERS -->
-  <section id="letters" data-tab hidden>
-    <div class="card">
-      <span class="sec">Section 04</span><h2>Request a Letter of Recommendation</h2>
-      <p>Fill out this form completely. The more specific you are, the stronger your letter can be.</p>
-      <div class="ph-block">PLACEHOLDER: Professor Neitling's policy — minimum notice before the deadline (e.g. 3 weeks), which students she writes for, and how letters are submitted.</div>
-      <div id="form-closed" class="notice" hidden>Letter requests will open here soon. In the meantime, please contact Professor Neitling directly.</div>
-
-      <form id="rec-form" novalidate>
-        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <fieldset>
-          <legend>About you</legend>
-          <div class="row">
-            <div><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" required autocomplete="name" maxlength="120"></div>
-            <div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email" maxlength="200"></div>
-          </div>
-          <div class="row">
-            <div><label for="title">Title <span class="req">*</span></label>
-              <select id="title" name="title" required><option value="">Choose…</option><option>Ms.</option><option>Mrs.</option><option>Mr.</option><option>Mx.</option><option value="None">No title (use my name)</option></select></div>
-            <div><label for="pronouns">Pronouns <span class="req">*</span></label><input id="pronouns" name="pronouns" placeholder="e.g. she/her" required maxlength="40"></div>
-          </div>
-          <label for="major">Intended major / field <span class="req">*</span></label><input id="major" name="major" required maxlength="200">
-        </fieldset>
-
-        <fieldset>
-          <legend>Your time in Professor Neitling's class</legend>
-          <div class="row">
-            <div><label for="course">Course(s) taken <span class="req">*</span></label><input id="course" name="course" placeholder="e.g. BIOL 442 Microbiology" required maxlength="200"></div>
-            <div><label for="term">Term(s) <span class="req">*</span></label><input id="term" name="term" placeholder="e.g. Fall 2025" required maxlength="100"></div>
-          </div>
-          <div class="row">
-            <div><label for="grade">Final grade <span class="hint">(if known)</span></label><input id="grade" name="grade" maxlength="20"></div>
-            <div><label for="known">How well does she know you?</label>
-              <select id="known" name="known"><option value="">Choose…</option><option>Student in one course</option><option>Student in multiple courses</option><option>Lab assistant / tutor / research</option><option>Other</option></select></div>
-          </div>
-          <label for="memory">A moment from her class she might remember you by <span class="hint">(a project, a question you asked, a lab you led)</span></label>
-          <textarea id="memory" name="memory" maxlength="3000"></textarea>
-        </fieldset>
-
-        <fieldset>
-          <legend>Where you're applying</legend>
-          <p class="muted" style="margin:6px 0 0;font-size:14px">Add each school separately. Professor Neitling writes a letter tailored to each one.</p>
-          <div id="schools"></div>
-          <button type="button" id="add-school" class="secondary">+ Add another school</button>
-          <div class="row">
-            <div><label for="method">How the letter is submitted <span class="req">*</span></label>
-              <select id="method" name="method" required><option value="">Choose…</option><option>Online portal (the school emails her a link)</option><option>Email directly to the program</option><option>Mailed paper letter</option><option>Other (explain in comments)</option></select></div>
-            <div></div>
-          </div>
-          <label class="check"><input type="checkbox" name="waived" id="waived"> I have waived (or will waive) my right to view this letter.</label>
-        </fieldset>
-
-        <fieldset>
-          <legend>Help her write a strong letter</legend>
-          <label for="skill">One special skill <span class="req">*</span> <span class="hint">(the one thing you most want the letter to highlight)</span></label>
-          <input id="skill" name="skill" required maxlength="200" placeholder="e.g. Explaining difficult lab procedures to classmates">
-          <label for="goals">Your goals: why these programs, and what you want to do after <span class="req">*</span></label>
-          <textarea id="goals" name="goals" required maxlength="4000"></textarea>
-          <label for="highlights">Accomplishments, work, volunteering, or activities <span class="hint">(especially science-related)</span></label>
-          <textarea id="highlights" name="highlights" maxlength="4000"></textarea>
-          <label for="challenges">Anything you overcame that you're comfortable having mentioned <span class="hint">(optional)</span></label>
-          <textarea id="challenges" name="challenges" maxlength="3000"></textarea>
-          <label for="resume">Link to your résumé or personal statement <span class="hint">(Google Drive or similar, set to "anyone with the link")</span></label>
-          <input id="resume" name="resume" type="url" placeholder="https://" maxlength="500">
-          <label for="comments">Comments <span class="hint">(anything else Professor Neitling should know)</span></label>
-          <textarea id="comments" name="comments" maxlength="3000"></textarea>
-        </fieldset>
-
-        <p class="muted" style="font-size:14px;margin-top:24px">Privacy: your answers go only to Professor Neitling and are used only to write your letter. They are not published on this site. Limit: 3 requests per hour.</p>
-        <label class="check"><input type="checkbox" id="confirm" required> The information above is accurate, and I understand a request is not a guarantee of a letter.</label>
-
-        <button type="submit" id="submit">Submit request</button>
-        <div id="form-msg" class="notice" hidden></div>
-      </form>
-
-      <template id="school-tpl">
-        <div class="school">
-          <div class="school-head"><strong class="school-num"></strong><button type="button" class="link remove-school">Remove</button></div>
-          <div class="row">
-            <div><label>School name <span class="req">*</span></label><input data-k="school" required maxlength="200" placeholder="e.g. Sacramento State University"></div>
-            <div><label>Program applying for <span class="req">*</span></label><input data-k="program" required maxlength="200" placeholder="e.g. B.S. Nursing"></div>
-          </div>
-          <label>Mailing address of the school / program <span class="req">*</span></label>
-          <textarea data-k="address" required maxlength="500" style="min-height:80px" placeholder="Office or department&#10;Street address&#10;City, State ZIP"></textarea>
-          <div class="row">
-            <div><label>Deadline <span class="req">*</span></label><input data-k="deadline" type="date" required></div>
-            <div></div>
+  <!-- ===================== HOME / ABOUT ===================== -->
+  <section id="tab-about" data-tab class="home" data-title="About Microbiology">
+    <div class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">BIOL 442 &middot; General Microbiology</div>
+          <h1>The invisible world that shapes human health.</h1>
+          <p class="lede">Professor Cassandra Neitling teaches the biology of bacteria, viruses, fungi and parasites at Folsom Lake College, preparing students for careers in nursing and the health professions.</p>
+          <div class="cta">
+            <a class="btn btn-light" href="#schedule">View Class Schedule</a>
+            <a class="btn btn-ghost" href="#letters">Request a Letter</a>
           </div>
         </div>
-      </template>
+        <figure class="portrait">
+          <img src="assets/casie-neitling.jpg" width="800" height="1000" alt="Professor Cassandra Neitling outdoors by a mountain lake" fetchpriority="high">
+          <figcaption>Prof. Cassandra Neitling<span>Microbiology</span></figcaption>
+        </figure>
+      </div>
+      <svg class="dna" id="dna" aria-hidden="true" preserveAspectRatio="none"></svg>
+    </div>
+
+    <nav class="quick wrap" aria-label="Quick links">
+      <ul>
+        <li><a href="#schedule"><span class="circle"><svg aria-hidden="true"><use href="#i-cal"/></svg></span>Class Schedule</a></li>
+        <li><a href="#schedule-office"><span class="circle"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>Office Hours</a></li>
+        <li><a href="#assignments"><span class="circle"><svg aria-hidden="true"><use href="#i-grade"/></svg></span>Grading</a></li>
+        <li><a href="#schedule-textbook"><span class="circle"><svg aria-hidden="true"><use href="#i-book"/></svg></span>Textbook</a></li>
+        <li><a href="#letters"><span class="circle"><svg aria-hidden="true"><use href="#i-letter"/></svg></span>Request a Letter</a></li>
+        <li><a href="#careers"><span class="circle"><svg aria-hidden="true"><use href="#i-brief"/></svg></span>Careers</a></li>
+      </ul>
+    </nav>
+
+    <div class="band">
+      <div class="wrap">
+        <div class="split">
+          <div class="intro">
+            <div class="kicker">About the course</div>
+            <h2>About Microbiology</h2>
+            <p>Microbiology is the study of the bacteria, viruses, fungi, protozoa and helminths that shape human health. In <strong>BIOL 442: General Microbiology and Public Health</strong>, students examine how these organisms are built, how they live and reproduce, how they cause disease, and how we identify, treat and prevent infection, from individual patients to global epidemics and pandemics.</p>
+            <p>The course is taught as preparation for careers in healthcare. Most students are headed toward nursing and other health professions, and the lab is where much of the learning happens: microscopy, culturing bacteria, and identifying unknown microorganisms from a simulated patient infection.</p>
+          </div>
+          <div class="card top">
+            <h3>Course at a glance</h3>
+            <table>
+              <tbody>
+                <tr><td class="muted">Course</td><td><strong>BIOL 442</strong></td></tr>
+                <tr><td class="muted">Units</td><td>5 (3 lecture + 2 lab)</td></tr>
+                <tr><td class="muted">Format</td><td>Lecture + Laboratory</td></tr>
+                <tr><td class="muted">Prerequisite</td><td>CHEM 305 or CHEM 400</td></tr>
+                <tr><td class="muted">Total points</td><td>500</td></tr>
+              </tbody>
+            </table>
+            <a class="btn btn-outline" style="margin-top:20px;width:100%" href="#schedule">Schedule &amp; requirements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="welcome-band">
+      <div class="wrap">
+        <img src="assets/casie-neitling.jpg" alt="" width="220" height="220" loading="lazy">
+        <div>
+          <div class="kicker">A welcome from your professor</div>
+          <blockquote>
+            <p>I love biology, and microbiology most of all: an invisible world that shapes every part of our health. My greatest joy is watching my students master challenging material, grow in confidence, and go on to successful careers in healthcare. If you are willing to put in the work, I will be right there with you every step of the way.</p>
+            <cite>Professor Cassandra Neitling<span>Microbiology, Folsom Lake College</span></cite>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+    <div class="band alt">
+      <div class="wrap">
+        <div class="kicker">Plates 1&ndash;5</div>
+        <h2>The organisms of microbiology</h2>
+        <p class="muted" style="max-width:62ch;margin:0">The five groups studied in BIOL 442, with their typical sizes.</p>
+        <div class="microbes">
+          <article class="microbe"><div class="plate"><div class="fig">Fig. 1</div><svg aria-hidden="true"><use href="#m-bacillus"/></svg></div><div class="body"><h3>Bacteria</h3><p class="eg">e.g. Escherichia, Staphylococcus</p><p class="size">0.5&ndash;5 &micro;m</p><p>Single cells without a nucleus. Most are harmless or essential; a few cause disease.</p></div></article>
+          <article class="microbe"><div class="plate"><div class="fig">Fig. 2</div><svg aria-hidden="true"><use href="#m-virus"/></svg></div><div class="body"><h3>Viruses</h3><p class="eg">e.g. influenza, SARS-CoV-2</p><p class="size">20&ndash;300 nm</p><p>Not cells: genetic material in a protein coat that must take over a host cell to replicate.</p></div></article>
+          <article class="microbe"><div class="plate"><div class="fig">Fig. 3</div><svg aria-hidden="true"><use href="#m-yeast"/></svg></div><div class="body"><h3>Fungi</h3><p class="eg">e.g. Candida, Aspergillus</p><p class="size">Yeast cells 3&ndash;10 &micro;m</p><p>Yeasts and molds. Some cause infections; others give us bread and penicillin.</p></div></article>
+          <article class="microbe"><div class="plate"><div class="fig">Fig. 4</div><svg aria-hidden="true"><use href="#m-amoeba"/></svg></div><div class="body"><h3>Protozoa</h3><p class="eg">e.g. Plasmodium, Giardia</p><p class="size">10&ndash;200 &micro;m</p><p>Single cells with a nucleus that move and feed, including the parasite that causes malaria.</p></div></article>
+          <article class="microbe"><div class="plate"><div class="fig">Fig. 5</div><svg aria-hidden="true"><use href="#m-worm"/></svg></div><div class="body"><h3>Helminths</h3><p class="eg">e.g. tapeworms, roundworms</p><p class="size">Millimeters to meters</p><p>Parasitic worms: multicellular animals, often visible without a microscope.</p></div></article>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="wrap two">
+        <div>
+          <div class="kicker">Student learning outcomes</div>
+          <h2>What students learn</h2>
+          <p class="muted">By the end of BIOL 442, students can:</p>
+        </div>
+        <ol class="outcomes">
+          <li>Apply microbiology concepts to current issues in human health, biotechnology, infectious disease and the environment.</li>
+          <li>Analyze how the human body interacts with microorganisms through symbiotic relationships and defense mechanisms.</li>
+          <li>Evaluate the role microbes play in epidemiology, and the methods used to control the spread of disease.</li>
+          <li>Conduct experiments involving culture and transfer of microbes, microscopy, biochemical tests, DNA techniques and diagnostic media.</li>
+          <li>Evaluate infectious diseases: causative agents, signs and symptoms, pathogenesis, virulence, epidemiology, diagnosis, treatment and prevention.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="band alt">
+      <div class="wrap">
+        <div class="kicker">Faculty profile</div>
+        <h2>Professor Neitling</h2>
+        <div class="grid" style="margin-top:28px">
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-cap"/></svg></div>
+            <h3>Education</h3>
+            <p style="margin:0 0 10px"><strong>Cornell University</strong><br><span class="muted">Undergraduate degree</span> <span class="ph">degree &amp; field</span></p>
+            <p style="margin:0"><strong>Harvard University</strong><br><span class="muted">Master's degree</span> <span class="ph">degree &amp; field</span></p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-flask"/></svg></div>
+            <h3>Knowledge, Skills &amp; Abilities</h3>
+            <span class="tag">Microbiology</span><span class="tag">Infectious disease</span><span class="tag">Epidemiology &amp; public health</span><span class="tag">Microscopy</span><span class="tag">Bacterial culture &amp; transfer</span><span class="tag">Unknown identification</span><span class="tag">Biochemical testing</span><span class="tag">DNA techniques</span><span class="tag">Diagnostic media</span><span class="tag">Anatomy &amp; physiology</span><span class="tag">Pre-health advising</span>
+          </div>
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+            <h3>Teaching Philosophy</h3>
+            <p style="margin:0 0 10px;font-family:var(--serif);font-size:18px;font-style:italic">“I am committed to creating a course that is inclusive in its design.”</p>
+            <p class="muted" style="margin:0;font-size:14px">From her course syllabus.</p>
+            <div class="ph-block">PLACEHOLDER: a fuller statement in her own words.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CAREERS -->
-  <section id="careers" data-tab hidden>
-    <div class="card">
-      <span class="sec">Section 05</span><h2>Career Opportunities in Microbiology</h2>
-      <p class="live-only muted" style="margin:0">Career resources are coming soon.</p>
-      <div class="ph-block">PLACEHOLDER: career paths, with sources cited. Content to be decided with Casie (transfer pathways, clinical lab, public health, biotech, research, etc.).</div>
+  <!-- ===================== SCHEDULE ===================== -->
+  <section id="tab-schedule" data-tab hidden data-title="Class Schedule" data-sub="Meeting times, office hours, prerequisites and course materials for BIOL 442.">
+    <div class="band">
+      <div class="wrap">
+        <div class="table-cap"><h2 style="margin:0">Meeting Times</h2><span class="pill">Fall 2026</span></div>
+        <p class="muted" style="margin:0 0 24px">BIOL 442 &middot; General Microbiology and Public Health &middot; 5 units: 3 lecture (54 hrs) + 2 lab (108 hrs)</p>
+        <div class="meet">
+          <div class="card top">
+            <h3>Group A <span class="pill">Mon &amp; Wed</span></h3>
+            <dl>
+              <dt>Lecture</dt><dd><strong>11:00&ndash;12:20</strong> &middot; Oak Hall 108</dd>
+              <dt>Lab</dt><dd><strong>1:00&ndash;4:05</strong> &middot; Oak Hall 126</dd>
+            </dl>
+          </div>
+          <div class="card top">
+            <h3>Group B <span class="pill">Tue &amp; Thu</span></h3>
+            <dl>
+              <dt>Lecture</dt><dd><strong>11:00&ndash;12:20</strong> &middot; Oak Hall 108</dd>
+              <dt>Lab</dt><dd><strong>1:00&ndash;4:05</strong> &middot; Oak Hall 126</dd>
+            </dl>
+          </div>
+        </div>
+        <p class="muted small" style="margin-top:18px">Times are for Fall 2026. Always confirm in the official <a href="https://flc.losrios.edu/" rel="noopener">Folsom Lake College</a> class schedule (search “BIOL 442”). Course materials are in Canvas under Modules.</p>
+      </div>
     </div>
-    <div class="grid">
-      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
-      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
-      <div class="card draft-only"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+
+    <div class="band alt" id="schedule-office">
+      <div class="wrap two">
+        <div>
+          <div class="kicker">Get help</div>
+          <h2>Office Hours</h2>
+          <p class="muted">Please let Professor Neitling know in advance. Questions are also welcome during her on-campus hours, Monday&ndash;Thursday 10:30&ndash;4:30.</p>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Day</th><th>Time</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Monday&ndash;Thursday</strong></td><td class="num">4:00&ndash;5:00</td></tr>
+              <tr><td><strong>Friday</strong></td><td class="num">9:00&ndash;5:00 via Zoom</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="band" id="schedule-textbook">
+      <div class="wrap">
+        <div class="kicker">Before you enroll</div>
+        <h2>Requirements &amp; Materials</h2>
+        <div class="grid" style="margin-top:28px">
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <h3>Prerequisite</h3>
+            <p style="margin-top:0">CHEM 305 (Introduction to Chemistry) or CHEM 400 (General Chemistry I) with a grade of C or better.</p>
+            <p class="muted small" style="margin-bottom:0">Equivalent chemistry courses from other colleges may qualify. Bring official or unofficial transcripts to the first day of class.</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-scope"/></svg></div>
+            <h3>Recommended first</h3>
+            <p style="margin:0">Some biology coursework helps: BIOL C1000 (Introduction to Biology with Lab), BIOL 310 (General Biology), or ENGWR 110 (College Reading and Writing Skills).</p>
+          </div>
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-book"/></svg></div>
+            <h3>Textbook &amp; Lab Manual</h3>
+            <p style="margin-top:0"><em>Microbiology Fundamentals: A Clinical Approach</em>, 4th ed. (Cowan &amp; Smith), with the companion lab manual, 4th ed. (Obenauf &amp; Finazzo).</p>
+            <p class="muted small" style="margin-bottom:0">Free PDF options are posted in Canvas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ASSIGNMENTS ===================== -->
+  <section id="tab-assignments" data-tab hidden data-title="Assignments &amp; Grading" data-sub="How the 500 points in BIOL 442 are earned, Fall 2026.">
+    <div class="band tight">
+      <div class="wrap">
+        <dl class="stats">
+          <div><dt>Total</dt><dd>500<small>points</small></dd></div>
+          <div><dt>Lecture</dt><dd>220<small>points &middot; 44%</small></dd></div>
+          <div><dt>Laboratory</dt><dd>280<small>points &middot; 56%</small></dd></div>
+          <div><dt>Extra credit</dt><dd>25<small>points maximum</small></dd></div>
+        </dl>
+        <div class="bar" role="img" aria-label="Lecture 220 points, laboratory 280 points"><span style="width:44%"></span><span style="width:56%"></span></div>
+        <div class="legend"><span><i style="background:var(--accent)"></i>Lecture 220</span><span><i style="background:var(--gold)"></i>Laboratory 280</span></div>
+      </div>
+    </div>
+
+    <div class="band" style="padding-top:24px">
+      <div class="wrap" style="display:grid;gap:40px">
+        <div>
+          <div class="table-cap"><h3>Lecture</h3><span class="pill">220 points</span></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Weekly quizzes</strong></td><td class="num">100</td><td>15-minute quiz each week from lecture and the book. Top 10 count, with 2 “freebies.” No make-ups.</td></tr>
+                <tr><td><strong>Final exam</strong></td><td class="num">80</td><td>Cumulative, same format as the quizzes.</td></tr>
+                <tr><td><strong>Notecards</strong></td><td class="num">25</td><td>One per lecture (1 pt each). Much of the final comes from these.</td></tr>
+                <tr><td><strong>Library Research Project</strong></td><td class="num">15</td><td>One library session using PubMed and ChatGPT to answer a research question.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div>
+          <div class="table-cap"><h3>Laboratory</h3><span class="pill">280 points</span></div>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Component</th><th>Points</th><th>What it is</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Pre-lab reports</strong></td><td class="num">50</td><td>2 pts each: read the manual, watch the video, record it in your lab notebook. No late submissions.</td></tr>
+                <tr><td><strong>Post-lab reports</strong></td><td class="num">50</td><td>2 pts each: perform the lab, record results, answer the questions.</td></tr>
+                <tr><td><strong>Unknown Bacteria Project</strong></td><td class="num">50</td><td>Most of the second half of the semester: identify the bacteria in a mixed culture from “your patient's” infection.</td></tr>
+                <tr><td><strong>Midterm lab practical</strong></td><td class="num">50</td><td>Microscopes and lab results to read and interpret.</td></tr>
+                <tr><td><strong>Final lab practical</strong></td><td class="num">80</td><td>Covers every assay performed during the semester.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band alt">
+      <div class="wrap">
+        <div class="kicker">Grading scale</div>
+        <h2>How grades are assigned</h2>
+        <div class="scale" style="margin-top:24px">
+          <div><b>A</b><span>450&ndash;500</span></div>
+          <div><b>B</b><span>400&ndash;449</span></div>
+          <div><b>C</b><span>350&ndash;399</span></div>
+          <div><b>D</b><span>300&ndash;349</span></div>
+          <div><b>F</b><span>&le; 299</span></div>
+        </div>
+        <div class="grid" style="margin-top:32px">
+          <div class="card">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <h3>Extra Credit</h3>
+            <p style="margin-top:0">Up to 25 points total: an end-of-term final exam revision quiz (up to 10), weekly tutoring sessions with a past microbiology student (up to 10), and INDIS 314/315 study skills courses (up to 5).</p>
+            <p class="muted small" style="margin-bottom:0">No free points. If you're one point from the next grade, extra credit is how you earn it.</p>
+          </div>
+          <div class="callout" style="align-self:start">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+            <div>
+              <h3>Heading to nursing school?</h3>
+              <p>Most nursing programs require an A or B in Microbiology. Plan ahead, track your points, and reach out early if you're at risk of a C. Use every resource: office hours, embedded tutors, classmates and your Success Coach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LETTERS ===================== -->
+  <section id="tab-letters" data-tab hidden data-title="Recommendation Letters" data-sub="Request a letter of recommendation from Professor Neitling. One request covers every school you're applying to.">
+    <div class="band">
+      <div class="wrap letters-layout">
+        <div class="card" style="padding:clamp(22px,4vw,40px)">
+          <h2 style="font-size:28px">Letter request form</h2>
+          <p class="muted" style="margin-top:0">Fill out this form completely. The more specific you are, the stronger your letter can be. Fields marked <span style="color:#b4402f">*</span> are required.</p>
+          <div class="ph-block">PLACEHOLDER: Professor Neitling's policy — minimum notice before the deadline (e.g. 3 weeks), which students she writes for, and how letters are submitted.</div>
+          <div id="form-closed" class="notice" hidden>Letter requests will open here soon. In the meantime, please contact Professor Neitling directly.</div>
+
+          <form id="rec-form" novalidate>
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <fieldset>
+              <legend><span class="n">1</span>About you</legend>
+              <div class="row">
+                <div><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" required autocomplete="name" maxlength="120"></div>
+                <div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email" maxlength="200"></div>
+              </div>
+              <div class="row">
+                <div><label for="title">Title <span class="req">*</span></label>
+                  <select id="title" name="title" required><option value="">Choose…</option><option>Ms.</option><option>Mrs.</option><option>Mr.</option><option>Mx.</option><option value="None">No title (use my name)</option></select></div>
+                <div><label for="pronouns">Pronouns <span class="req">*</span></label><input id="pronouns" name="pronouns" placeholder="e.g. she/her" required maxlength="40"></div>
+              </div>
+              <label for="major">Intended major / field <span class="req">*</span></label><input id="major" name="major" required maxlength="200">
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">2</span>Your time in her class</legend>
+              <div class="row">
+                <div><label for="course">Course(s) taken <span class="req">*</span></label><input id="course" name="course" placeholder="e.g. BIOL 442 Microbiology" required maxlength="200"></div>
+                <div><label for="term">Term(s) <span class="req">*</span></label><input id="term" name="term" placeholder="e.g. Fall 2025" required maxlength="100"></div>
+              </div>
+              <div class="row">
+                <div><label for="grade">Final grade <span class="hint">(if known)</span></label><input id="grade" name="grade" maxlength="20"></div>
+                <div><label for="known">How well does she know you?</label>
+                  <select id="known" name="known"><option value="">Choose…</option><option>Student in one course</option><option>Student in multiple courses</option><option>Lab assistant / tutor / research</option><option>Other</option></select></div>
+              </div>
+              <label for="memory">A moment from her class she might remember you by <span class="hint">(a project, a question you asked, a lab you led)</span></label>
+              <textarea id="memory" name="memory" maxlength="3000"></textarea>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">3</span>Where you're applying</legend>
+              <p class="muted" style="margin:6px 0 0;font-size:14px">Add each school separately. Professor Neitling writes a letter tailored to each one.</p>
+              <div id="schools"></div>
+              <button type="button" id="add-school" class="secondary">+ Add another school</button>
+              <div class="row">
+                <div><label for="method">How the letter is submitted <span class="req">*</span></label>
+                  <select id="method" name="method" required><option value="">Choose…</option><option>Online portal (the school emails her a link)</option><option>Email directly to the program</option><option>Mailed paper letter</option><option>Other (explain in comments)</option></select></div>
+                <div></div>
+              </div>
+              <label class="check"><input type="checkbox" name="waived" id="waived"> I have waived (or will waive) my right to view this letter.</label>
+            </fieldset>
+
+            <fieldset>
+              <legend><span class="n">4</span>Help her write a strong letter</legend>
+              <label for="skill">One special skill <span class="req">*</span> <span class="hint">(the one thing you most want the letter to highlight)</span></label>
+              <input id="skill" name="skill" required maxlength="200" placeholder="e.g. Explaining difficult lab procedures to classmates">
+              <label for="goals">Your goals: why these programs, and what you want to do after <span class="req">*</span></label>
+              <textarea id="goals" name="goals" required maxlength="4000"></textarea>
+              <label for="highlights">Accomplishments, work, volunteering, or activities <span class="hint">(especially science-related)</span></label>
+              <textarea id="highlights" name="highlights" maxlength="4000"></textarea>
+              <label for="challenges">Anything you overcame that you're comfortable having mentioned <span class="hint">(optional)</span></label>
+              <textarea id="challenges" name="challenges" maxlength="3000"></textarea>
+              <label for="resume">Link to your résumé or personal statement <span class="hint">(Google Drive or similar, set to "anyone with the link")</span></label>
+              <input id="resume" name="resume" type="url" placeholder="https://" maxlength="500">
+              <label for="comments">Comments <span class="hint">(anything else Professor Neitling should know)</span></label>
+              <textarea id="comments" name="comments" maxlength="3000"></textarea>
+            </fieldset>
+
+            <fieldset>
+              <p class="muted" style="font-size:14px;margin:0 0 6px">Privacy: your answers go only to Professor Neitling and are used only to write your letter. They are not published on this site. Limit: 3 requests per hour.</p>
+              <label class="check"><input type="checkbox" id="confirm" required> The information above is accurate, and I understand a request is not a guarantee of a letter.</label>
+              <button type="submit" id="submit">Submit request</button>
+              <div id="form-msg" class="notice" role="status" hidden></div>
+            </fieldset>
+          </form>
+
+          <template id="school-tpl">
+            <div class="school">
+              <div class="school-head"><strong class="school-num"></strong><button type="button" class="link remove-school">Remove</button></div>
+              <div class="row">
+                <div><label>School name <span class="req">*</span></label><input data-k="school" required maxlength="200" placeholder="e.g. Sacramento State University"></div>
+                <div><label>Program applying for <span class="req">*</span></label><input data-k="program" required maxlength="200" placeholder="e.g. B.S. Nursing"></div>
+              </div>
+              <label>Mailing address of the school / program <span class="req">*</span></label>
+              <textarea data-k="address" required maxlength="500" style="min-height:84px" placeholder="Office or department&#10;Street address&#10;City, State ZIP"></textarea>
+              <div class="row">
+                <div><label>Deadline <span class="req">*</span></label><input data-k="deadline" type="date" required></div>
+                <div></div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <aside class="aside" aria-label="How letter requests work">
+          <div class="card top">
+            <h3>How it works</h3>
+            <ol class="steps">
+              <li><strong>Submit one request</strong><span class="muted">List every school you're applying to, each with its own deadline.</span></li>
+              <li><strong>Save your reference number</strong><span class="muted">It appears on screen after you submit. A screenshot works.</span></li>
+              <li><strong>Professor Neitling reviews it</strong><span class="muted">She writes a letter tailored to each school and contacts you if she needs anything else.</span></li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Tips for a strong letter</h3>
+            <ul style="margin:0;padding-left:20px;font-size:15px;display:grid;gap:8px">
+              <li>Be specific: a moment, a project, a lab you led.</li>
+              <li>Share your goals and why each program fits.</li>
+              <li>Link a résumé or personal statement if you have one.</li>
+              <li>Request well ahead of your earliest deadline.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAREERS ===================== -->
+  <section id="tab-careers" data-tab hidden data-title="Career Opportunities" data-sub="Where microbiology can take you: transfer pathways and careers in healthcare and science.">
+    <div class="band">
+      <div class="wrap">
+        <div class="empty live-only">
+          <div class="ic"><svg aria-hidden="true"><use href="#i-brief"/></svg></div>
+          <h2 style="font-size:26px">Career resources are coming soon</h2>
+          <p class="muted" style="margin:0 auto;max-width:52ch">In the meantime, ask Professor Neitling during <a href="#schedule-office">office hours</a> about pathways in nursing, clinical laboratory science, public health and research.</p>
+        </div>
+        <div class="ph-block">PLACEHOLDER: career paths, with sources cited. Content to be decided with Casie (transfer pathways, clinical lab, public health, biotech, research, etc.).</div>
+        <div class="grid draft-only" style="margin-top:20px">
+          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
 </main>
 
-<footer class="wrap">© <span id="yr"></span> Cassandra Neitling · Personal faculty page, not an official Folsom Lake College website. Official course listings are on the college's class schedule.</footer>
+<footer>
+  <div class="foot-main">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="mark" aria-hidden="true">CN</span>
+          <div>
+            <strong style="font:600 18px/1.3 var(--serif)">Professor Cassandra Neitling</strong>
+            <div class="muted small">Professor of Microbiology</div>
+          </div>
+        </div>
+        <address style="margin-top:18px;display:flex;gap:10px"><svg class="icon" style="color:var(--accent);margin-top:4px" aria-hidden="true"><use href="#i-pin"/></svg><span>Folsom Lake College<br>10 College Parkway<br>Folsom, CA 95630</span></address>
+      </div>
+      <div>
+        <h4>This site</h4>
+        <ul>
+          <li><a href="#about">About Microbiology</a></li>
+          <li><a href="#schedule">Class Schedule</a></li>
+          <li><a href="#assignments">Assignments &amp; Grading</a></li>
+          <li><a href="#letters">Recommendation Letters</a></li>
+          <li><a href="#careers">Career Opportunities</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>For students</h4>
+        <ul>
+          <li><a href="#schedule-office">Office Hours</a></li>
+          <li><a href="#schedule-textbook">Textbook &amp; Prerequisites</a></li>
+          <li><a href="#letters">Request a Letter</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Office hours</h4>
+        <p style="margin:0" class="muted">Mon&ndash;Thu 4:00&ndash;5:00<br>Friday 9:00&ndash;5:00 (Zoom)</p>
+        <p style="margin:10px 0 0" class="muted small">Please let her know in advance.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot-band">
+    <div class="wrap">
+      <span>Official college resources</span>
+      <ul>
+        <li><a href="https://flc.losrios.edu/" rel="noopener">Folsom Lake College</a></li>
+        <li><a href="https://losrios.edu/" rel="noopener">Los Rios Community College District</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-legal">
+    <div class="wrap">
+      <span>&copy; <span id="yr"></span> Cassandra Neitling</span>
+      <span>Personal faculty page, not an official Folsom Lake College website. Official course listings are on the college's class schedule.</span>
+    </div>
+  </div>
+</footer>
 
 <script>
-// ---- Settings: fill in once the Apps Script backend is deployed ----
+// ---- Settings ----
 const FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbywKGPsB7miLhSPE-0BkiLF2glHIsFhABrbg0uRZzAajixAlDLoPByoDBC0_WMgcKxc/exec"; // Apps Script web app (letter engine)
 
 // Preview mode: add ?draft=1 to the URL to see placeholders
@@ -528,31 +930,59 @@ if (!FORM_ENDPOINT && !DRAFT) {
   document.getElementById('rec-form').hidden = true;
 }
 
-// Tabs (hash-based so each tab has its own shareable link, e.g. /#letters)
+// Tabs (hash-based so each tab has its own shareable link, e.g. /#letters).
+// A hash can also point at an element inside a tab (e.g. #schedule-office): that tab opens and scrolls to it.
 const tabs = [...document.querySelectorAll('[data-tab]')];
 const links = [...document.querySelectorAll('.tabs a')];
+const head = document.getElementById('pagehead');
+const BASE_TITLE = 'Professor Neitling';
 function show(){
-  const id = (location.hash || '#about').slice(1);
-  const target = tabs.find(t => t.id === id) ? id : 'about';
-  tabs.forEach(t => t.hidden = t.id !== target);
-  links.forEach(a => a.getAttribute('href') === '#'+target ? a.setAttribute('aria-current','page') : a.removeAttribute('aria-current'));
+  const id = decodeURIComponent((location.hash || '#about').slice(1));
+  let tab = tabs.find(t => t.id === 'tab-' + id), anchor = null;
+  if (!tab) { anchor = document.getElementById(id); tab = anchor && anchor.closest('[data-tab]'); }
+  if (!tab) { tab = tabs[0]; anchor = null; }
+  tabs.forEach(t => t.hidden = t !== tab);
+  links.forEach(a => a.getAttribute('href') === '#' + tab.id.slice(4) ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  // keep the active tab visible in the scrolling nav on phones
+  const cur = links.find(a => a.hasAttribute('aria-current')), bar = cur && cur.parentElement;
+  if (bar && bar.scrollWidth > bar.clientWidth) bar.scrollLeft = cur.offsetLeft - (bar.clientWidth - cur.offsetWidth) / 2;
+  const home = tab.id === 'tab-about';
+  head.hidden = home;
+  if (!home) {
+    const tmp = document.createElement('textarea');
+    tmp.innerHTML = tab.dataset.title; const title = tmp.value;
+    document.getElementById('ph-title').textContent = title;
+    document.getElementById('ph-crumb').textContent = title;
+    document.getElementById('ph-sub').textContent = tab.dataset.sub || '';
+    document.title = title + ' · ' + BASE_TITLE;
+  } else document.title = BASE_TITLE + ' · Microbiology';
+  return anchor;
 }
-addEventListener('hashchange', () => { show(); scrollTo({top:0}); });
-show();
+function route(){
+  const anchor = show();
+  if (anchor) requestAnimationFrame(() => anchor.scrollIntoView({block:'start'}));
+  else scrollTo({top:0});
+}
+addEventListener('hashchange', route);
+// On first load the browser jumps to the element named in the hash; start tabs at the top instead.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+const firstAnchor = show();
+addEventListener('load', () => firstAnchor ? firstAnchor.scrollIntoView({block:'start'}) : scrollTo(0, 0));
+requestAnimationFrame(() => firstAnchor ? firstAnchor.scrollIntoView({block:'start'}) : scrollTo(0, 0));
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// DNA double helix: two sinusoidal strands with base-pair rungs, drifting slowly (static if reduced motion is preferred)
+// DNA double helix along the bottom of the hero: two sinusoidal strands with base-pair rungs, drifting slowly (static if reduced motion is preferred)
 (function(){
   const svg = document.getElementById('dna'); if (!svg) return;
   const NS = 'http://www.w3.org/2000/svg';
   const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W = 0, H = 58, phase = 0;
+  let W = 0, H = 64, phase = 0, running = false;
   const g = document.createElementNS(NS, 'g'); svg.appendChild(g);
   const s1 = document.createElementNS(NS, 'path'), s2 = document.createElementNS(NS, 'path');
   [s1, s2].forEach((p, i) => { p.setAttribute('fill', 'none'); p.setAttribute('stroke', 'currentColor'); p.setAttribute('stroke-width', '1.5'); if (i) p.setAttribute('class', 's2'); });
-  const rungs = document.createElementNS(NS, 'g'); rungs.setAttribute('stroke', 'currentColor'); rungs.setAttribute('stroke-width', '1'); rungs.setAttribute('opacity', '.28');
+  const rungs = document.createElementNS(NS, 'g'); rungs.setAttribute('stroke', 'currentColor'); rungs.setAttribute('stroke-width', '1'); rungs.setAttribute('opacity', '.6');
   g.append(rungs, s1, s2);
-  const P = 150, A = 20, STEP = 10;
+  const P = 160, A = 18, STEP = 10;
   function draw(){
     W = svg.clientWidth || 1000; svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const y = (x, o) => H / 2 + A * Math.sin((x + phase) * 2 * Math.PI / P + o);
@@ -564,7 +994,12 @@ document.getElementById('yr').textContent = new Date().getFullYear();
     rungs.innerHTML = `<path d="${r}"/>`;
   }
   draw(); addEventListener('resize', draw);
-  if (!reduce) { (function tick(){ phase = (phase + 0.25) % P; draw(); requestAnimationFrame(tick); })(); }
+  if (!reduce) {
+    // animate only while the hero is visible
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting && !running) { running = true; tick(); } else if (!e.isIntersecting) running = false; });
+    function tick(){ if (!running) return; phase = (phase + 0.25) % P; draw(); requestAnimationFrame(tick); }
+    io.observe(svg);
+  }
 })();
 
 // Letter request form
