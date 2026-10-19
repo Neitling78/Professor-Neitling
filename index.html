@@ -298,6 +298,24 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
 .empty .ic{margin:0 auto 18px;width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
 .empty .ic svg{width:30px;height:30px}
 
+/* careers */
+.careers{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-top:24px}
+.career{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--accent);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.career-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.career h3{margin:0}
+.mb{flex:none;font:600 11.5px/1 var(--sans);letter-spacing:.04em;padding:6px 9px;border-radius:999px;white-space:nowrap}
+.mb.req{background:var(--accent);color:var(--accent-ink)}
+.mb.some{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.mb.rec{background:var(--bg-alt);color:var(--muted);border:1px solid var(--line)}
+.pay{margin:16px 0 14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.pay b{display:block;font:600 32px/1.1 var(--serif);color:var(--ink)}
+.pay span{font-size:13px;color:var(--muted)}
+.career dl{margin:0;display:grid;gap:4px 0;font-size:14.5px}
+.career dt{font:600 11.5px/1.3 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.career dd{margin:0}
+.career .src{margin:auto 0 0;padding-top:16px;font-size:13px;color:var(--muted)}
+@media (max-width:400px){.careers{grid-template-columns:1fr}.career-top{flex-direction:column}}
+
 /* ---------- footer ---------- */
 .foot-main{background:var(--bg-alt);border-top:1px solid var(--line);padding:56px 0 44px;font-size:15px}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
@@ -841,20 +859,108 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
   </section>
 
   <!-- ===================== CAREERS ===================== -->
-  <section id="tab-careers" data-tab hidden data-title="Career Opportunities" data-sub="Where microbiology can take you: transfer pathways and careers in healthcare and science.">
-    <div class="band">
+  <section id="tab-careers" data-tab hidden data-title="Career Opportunities" data-sub="Careers paying over $150,000 a year in California where Microbiology is part of the path.">
+    <div class="band tight">
       <div class="wrap">
-        <div class="empty live-only">
+        <div class="callout">
           <div class="ic"><svg aria-hidden="true"><use href="#i-brief"/></svg></div>
-          <h2 style="font-size:26px">Career resources are coming soon</h2>
-          <p class="muted" style="margin:0 auto;max-width:52ch">In the meantime, ask Professor Neitling during <a href="#schedule-office">office hours</a> about pathways in nursing, clinical laboratory science, public health and research.</p>
+          <div>
+            <h3>How this list was made</h3>
+            <p>Pay is the <strong>California median annual wage</strong> (half earn more, half less) from the U.S. Bureau of Labor Statistics, <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">May 2025 estimates</a>. Each career is shown with a real program that lists Microbiology. Requirements vary by school, so always check the prerequisite list of every program you apply to.</p>
+          </div>
         </div>
-        <div class="ph-block">PLACEHOLDER: career paths, with sources cited. Content to be decided with Casie (transfer pathways, clinical lab, public health, biotech, research, etc.).</div>
-        <div class="grid draft-only" style="margin-top:20px">
-          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
-          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
-          <div class="card"><h3><span class="ph">Career path</span></h3><div class="ph-block">Description · typical education · where to learn more</div></div>
+      </div>
+    </div>
+    <div class="band" style="padding-top:24px">
+      <div class="wrap">
+        <div class="kicker">Microbiology required</div>
+        <h2>Microbiology is a required course on the path</h2>
+        <div class="careers">
+          <article class="career">
+            <div class="career-top"><h3>Nurse Anesthetist (CRNA)</h3><span class="mb req">Required</span></div>
+            <div class="pay"><b>$292,410</b><span>California median per year &middot; 2,230 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Registered nurse (BSN) &rarr; 1 year of critical-care nursing &rarr; graduate nurse anesthesia program.</dd>
+              <dt>Microbiology</dt><dd>Required to become a registered nurse first. Example: Sacramento State&rsquo;s BSN lists Microbiology with lab as a required prerequisite.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/nurse-anesthetists-nurse-midwives-and-nurse-practitioners.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://www.csus.edu/college/health-human-services/nursing/_internal/_documents/prereq_req.pdf-update4.pdf" target="_blank" rel="noopener">Sac State BSN prerequisites</a></p>
+          </article>
+          <article class="career">
+            <div class="career-top"><h3>Nurse Midwife</h3><span class="mb req">Required</span></div>
+            <div class="pay"><b>$203,840</b><span>California median per year &middot; 870 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Registered nurse &rarr; master&rsquo;s or doctorate in nurse-midwifery.</dd>
+              <dt>Microbiology</dt><dd>Required to become a registered nurse first. Example: Sacramento State&rsquo;s BSN lists Microbiology with lab as a required prerequisite.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/nurse-anesthetists-nurse-midwives-and-nurse-practitioners.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://www.csus.edu/college/health-human-services/nursing/_internal/_documents/prereq_req.pdf-update4.pdf" target="_blank" rel="noopener">Sac State BSN prerequisites</a></p>
+          </article>
+          <article class="career">
+            <div class="career-top"><h3>Nurse Practitioner</h3><span class="mb req">Required</span></div>
+            <div class="pay"><b>$168,520</b><span>California median per year &middot; 25,120 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Registered nurse &rarr; master&rsquo;s or doctorate as a nurse practitioner.</dd>
+              <dt>Microbiology</dt><dd>Required to become a registered nurse first. Example: Sacramento State&rsquo;s BSN lists Microbiology with lab as a required prerequisite.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/nurse-anesthetists-nurse-midwives-and-nurse-practitioners.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://www.csus.edu/college/health-human-services/nursing/_internal/_documents/prereq_req.pdf-update4.pdf" target="_blank" rel="noopener">Sac State BSN prerequisites</a></p>
+          </article>
+          <article class="career">
+            <div class="career-top"><h3>Physician Assistant</h3><span class="mb req">Required</span></div>
+            <div class="pay"><b>$165,650</b><span>California median per year &middot; 13,600 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Bachelor&rsquo;s degree and patient-care experience &rarr; master&rsquo;s-level PA program.</dd>
+              <dt>Microbiology</dt><dd>Example: UC Davis&rsquo;s PA program requires &ldquo;one course in microbiology or bacteriology with lab.&rdquo;</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/physician-assistants.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://health.ucdavis.edu/NURSING/ADMISSIONS/PROGRAMS/MHS-PA.HTML" target="_blank" rel="noopener">UC Davis PA prerequisites</a></p>
+          </article>
+          <article class="career">
+            <div class="career-top"><h3>Pharmacist</h3><span class="mb req">Required</span></div>
+            <div class="pay"><b>$164,610</b><span>California median per year &middot; 34,030 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Prerequisite coursework &rarr; Doctor of Pharmacy (PharmD), usually 4 years.</dd>
+              <dt>Microbiology</dt><dd>Example: UCSF&rsquo;s PharmD requires one course in microbiology.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/pharmacists.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://pharmd.ucsf.edu/admissions/reqs/academic" target="_blank" rel="noopener">UCSF PharmD prerequisites</a></p>
+          </article>
         </div>
+
+        <div class="kicker" style="margin-top:56px">Required at some schools</div>
+        <h2>Microbiology is required by some programs</h2>
+        <div class="careers">
+          <article class="career">
+            <div class="career-top"><h3>Veterinarian</h3><span class="mb some">Required by some schools</span></div>
+            <div class="pay"><b>$163,920</b><span>California median per year &middot; 9,170 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Prerequisite coursework &rarr; Doctor of Veterinary Medicine (DVM), about 4 years.</dd>
+              <dt>Microbiology</dt><dd>Required by 12 of 34 U.S. veterinary schools on the 2026 application chart, including Western University of Health Sciences (Pomona). Not required at UC Davis.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://www.bls.gov/ooh/healthcare/veterinarians.htm" target="_blank" rel="noopener">BLS career profile</a> · <a href="https://admin.applytovetschool.org/wp-content/uploads/2025/05/Prereq-chart-for-VMCAS-2026.pdf" target="_blank" rel="noopener">VMCAS 2026 prerequisite chart</a></p>
+          </article>
+        </div>
+
+        <div class="kicker" style="margin-top:56px">Not required</div>
+        <h2>Also over $150,000: Microbiology recommended or optional</h2>
+        <div class="careers">
+          <article class="career">
+            <div class="career-top"><h3>Dentist</h3><span class="mb rec">Recommended</span></div>
+            <div class="pay"><b>$165,950</b><span>California median per year &middot; 16,770 jobs in CA</span></div>
+            <dl>
+              <dt>Path</dt><dd>Prerequisite coursework &rarr; DDS or DMD dental degree. Dental specialists (California median $230,730) train further.</dd>
+              <dt>Microbiology</dt><dd>Recommended, not required, at UCLA and at University of the Pacific.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://dentistry.ucla.edu/academics-admissions/dds-program/prerequisites" target="_blank" rel="noopener">UCLA DDS prerequisites</a> · <a href="https://www.pacific.edu/dental/academic-programs/doctor-of-dental-surgery/dds-admissions-requirements" target="_blank" rel="noopener">Pacific DDS prerequisites</a></p>
+          </article>
+          <article class="career">
+            <div class="career-top"><h3>Physician</h3><span class="mb rec">Not a standard prerequisite</span></div>
+            <div class="pay"><b>$185,610&ndash;$400,150</b><span>California median per year</span></div>
+            <dl>
+              <dt>Path</dt><dd>MD or DO degree &rarr; residency. Range across most physician specialties with published California medians, from cardiologists to ophthalmologists.</dd>
+              <dt>Microbiology</dt><dd>Not a standard medical school admission requirement. Example: UC Davis requires a year each of biological sciences, general chemistry, organic chemistry and physics.</dd>
+            </dl>
+            <p class="src">Sources: <a href="https://data.bls.gov/oes/#/area/0600000/2025" target="_blank" rel="noopener">BLS wages</a> · <a href="https://health.ucdavis.edu/medical-school/admissions/premedical-requirements" target="_blank" rel="noopener">UC Davis School of Medicine prerequisites</a></p>
+          </article>
+        </div>
+
+        <p class="muted small" style="margin-top:32px">For comparison, registered nurses in California earn a median of $140,270, and many go on to the advanced practice roles above. Wage data: BLS Occupational Employment and Wage Statistics, California, May 2025. Last reviewed October 2026.</p>
       </div>
     </div>
   </section>
