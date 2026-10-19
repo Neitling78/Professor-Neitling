@@ -147,6 +147,10 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
   .ring,.badge,.fl,.dna i,.microbe:hover svg{animation:none!important}
   .microbe:hover{transform:none}
 }
+.welcome{margin:22px 0 0;padding:18px 22px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0}
+.welcome p{margin:0;font-family:Fraunces,Georgia,serif;font-size:19px;line-height:1.55}
+.welcome footer{border:0;padding:10px 0 0;margin:0;font-size:14px;color:var(--accent);font-weight:600}
+.welcome footer::before{content:"— "}
 footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
 @media (max-width:520px){.card{padding:18px}}
 </style>
@@ -247,7 +251,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <h2 class="h2-icon"><svg style="color:var(--c1)" aria-hidden="true"><use href="#m-bacillus"/></svg>About Microbiology</h2>
       <p>Microbiology is the study of the bacteria, viruses, fungi, protozoa and helminths that shape human health. In <strong>BIOL 442: General Microbiology and Public Health</strong>, students examine how these organisms are built, how they live and reproduce, how they cause disease, and how we identify, treat and prevent infection, from individual patients to global epidemics and pandemics.</p>
       <p>The course is taught as preparation for careers in healthcare. Most students are headed toward nursing and other health professions, and the lab is where much of the learning happens: microscopy, culturing bacteria, and identifying unknown microorganisms from a simulated patient infection.</p>
-      <div class="ph-block">PLACEHOLDER: a short personal welcome from Professor Neitling, in her own words.</div>
+      <blockquote class="welcome">
+        <p>I love biology, and microbiology most of all: an invisible world that shapes every part of our health. My greatest joy is watching my students master challenging material, grow in confidence, and go on to successful careers in healthcare. If you are willing to put in the work, I will be right there with you every step of the way.</p>
+        <footer>Professor Neitling</footer>
+      </blockquote>
     </div>
     <div class="grid">
       <div class="card">
