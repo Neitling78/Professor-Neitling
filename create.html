@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Create Letter · Private</title>
+<style>
+  :root{--bg:#f7f6f2;--s:#fff;--ink:#1d2321;--mut:#5d6763;--line:#e3e1da;--acc:#1f6f5c;--soft:#e3f0ec;--warn:#8a5a00;--wsoft:#fff4dc;--err:#a3261b}
+  @media (prefers-color-scheme:dark){:root{--bg:#121614;--s:#1a201d;--ink:#e8ece9;--mut:#9aa5a0;--line:#2a322e;--acc:#5cc2a6;--soft:#1f2f2a;--warn:#f0c46a;--wsoft:#2e2717;--err:#ff8a80}}
+  *{box-sizing:border-box} h1,dd,label,.result{overflow-wrap:anywhere} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+  .wrap{max-width:820px;margin:0 auto;padding:24px 16px 64px}
+  h1{font-size:26px;margin:4px 0} h2{font-size:18px;margin:0 0 10px}
+  .eyebrow{color:var(--acc);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+  .card{background:var(--s);border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .mut{color:var(--mut)} .small{font-size:13px}
+  dl{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:6px 14px;margin:0}
+  dt{color:var(--mut);font-size:14px} dd{margin:0;white-space:pre-wrap;word-break:break-word}
+  @media (max-width:560px){dl{grid-template-columns:1fr} dt{margin-top:8px}}
+  label{display:block;font-weight:600;font-size:14px;margin:16px 0 6px}
+  textarea{width:100%;min-height:130px;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px;resize:vertical}
+  .opt{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin:8px 0}
+  .opt input{margin-top:5px}
+  button{font:inherit;font-weight:700;background:var(--acc);color:#fff;border:0;border-radius:999px;padding:13px 26px;cursor:pointer;margin-top:18px}
+  button:disabled{opacity:.55;cursor:default}
+  .notice{border-radius:10px;padding:12px 14px;margin-top:14px;background:var(--soft)}
+  .warn{background:var(--wsoft);color:var(--warn)} .err{color:var(--err)}
+  .result{border-top:1px solid var(--line);padding:12px 0} .result a{color:var(--acc);font-weight:700}
+  ul.flags{margin:6px 0 0;padding-left:20px;color:var(--warn);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Create Letter · Private</div>
+  <h1 id="title">Loading…</h1>
+  <div id="sub" class="mut small"></div>
+
+  <div id="loaderr" class="notice err" hidden></div>
+  <div id="main" hidden>
+  <div id="apiwarn" class="notice warn" hidden>The letter writer isn't connected yet (Phase 3). You can review the request now; the Generate button will work once the API key is added.</div>
+  <div id="prior" class="card" hidden><h2>Earlier drafts</h2><div id="priorList" class="small"></div></div>
+
+  <div class="card"><h2>What the student sent</h2><dl id="facts"></dl></div>
+
+  <div class="card">
+    <h2>Your part</h2>
+    <label for="notes">Your own observations <span class="mut small">(required: what you remember, what stood out, specific moments)</span></label>
+    <textarea id="notes" placeholder="e.g. Stayed after lab to help her partners with the Gram stains; one of the strongest Unknown Bacteria projects this year; always prepared…"></textarea>
+
+    <label>Which schools? <span class="mut small">(one tailored letter each)</span></label>
+    <div id="programs"></div>
+
+    <label>Length</label>
+    <label class="opt"><input type="radio" name="len" value="standard" checked> Standard: 2 paragraphs, about 200 words (like your past letters)</label>
+    <label class="opt"><input type="radio" name="len" value="long"> Longer: 3 paragraphs, about 350 words</label>
+
+    <label class="opt" style="margin-top:14px"><input type="checkbox" id="cred"> Include my Cornell / Harvard credentials line</label>
+
+    <label for="extra">Anything to emphasize or avoid <span class="mut small">(optional)</span></label>
+    <textarea id="extra" style="min-height:80px"></textarea>
+
+    <button id="go">Generate draft</button>
+    <div id="status" class="notice" hidden></div>
+    <div id="results"></div>
+  </div>
+  </div>
+  <p class="mut small">Drafts are saved as Google Docs in your "Letters of Recommendation – Drafts" folder and emailed to you. Review and edit every draft before sending.</p>
+</div>
+
+<script>
+const ENGINE = 'https://script.google.com/macros/s/AKfycbywKGPsB7miLhSPE-0BkiLF2glHIsFhABrbg0uRZzAajixAlDLoPByoDBC0_WMgcKxc/exec';
+const hash = new URLSearchParams(location.hash.slice(1));
+const ID = hash.get('id'), TOKEN = hash.get('t');
+async function call(body) {
+  const res = await fetch(ENGINE, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(body), credentials: 'omit' });
+  return res.json();
+}
+(async () => {
+  let P;
+  try {
+    if (!ID || !TOKEN) throw new Error('This link is incomplete. Open it straight from your email.');
+    P = await call({ action: 'get', id: ID, t: TOKEN });
+    if (!P.ok) throw new Error(P.error || 'This link is not valid.');
+  } catch (err) {
+    document.getElementById('title').textContent = 'Can\'t open this request';
+    const e = document.getElementById('loaderr'); e.hidden = false; e.textContent = err.message || 'Could not reach the letter engine. Check your connection and try again.';
+    return;
+  }
+  document.getElementById('main').hidden = false;
+  render(P);
+})();
+function render(P) {
+const $ = id => document.getElementById(id);
+const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
+const r = P.request;
+
+$('title').textContent = r.name;
+$('sub').textContent = 'Request ' + P.id + ' · received ' + P.received + ' · status: ' + P.status;
+if (!P.apiReady) $('apiwarn').hidden = false;
+if (P.notes) $('notes').value = P.notes;
+
+if (P.docs) {
+  $('prior').hidden = false;
+  P.docs.split('\n').forEach(line => {
+    const m = line.match(/^(.*) → (https?:\S+)$/);
+    const d = el('div');
+    if (m) { d.append(el('span', m[1] + ': ')); const a = el('a', 'Open'); a.href = m[2]; a.target = '_blank'; d.append(a); }
+    else d.textContent = line;
+    $('priorList').append(d);
+  });
+}
+
+const fmtDate = v => { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v || ''); return m ? new Date(+m[1], +m[2]-1, +m[3]).toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric', year:'numeric'}) : (v || ''); };
+const rows = [
+  ['Name', (r.title && r.title !== 'None' ? r.title + ' ' : '') + r.name], ['Pronouns', r.pronouns], ['Email', r.email],
+  ['Major / field', r.major], ['Course', r.course + ' · ' + r.term], ['Grade', r.grade],
+  ['How well you know them', r.known], ['A moment from class', r.memory],
+  ['One special skill', r.skill], ['Goals', r.goals], ['Accomplishments', r.highlights],
+  ['Challenges overcome', r.challenges], ['Comments', r.comments],
+  ['How submitted', r.method], ['Waived right to view', r.waived], ['Résumé / statement', r.resume],
+];
+rows.forEach(([k, v]) => {
+  if (!v) return;
+  $('facts').append(el('dt', k));
+  const dd = el('dd');
+  if (/^https?:\/\//.test(v)) { const a = el('a', v); a.href = v; a.target = '_blank'; a.rel = 'noopener'; dd.append(a); }
+  else dd.textContent = v;
+  $('facts').append(dd);
+});
+
+(P.schools || []).forEach((sc, i) => {
+  const lab = el('label', null, 'opt');
+  const cb = el('input'); cb.type = 'checkbox'; cb.checked = true; cb.value = i; cb.className = 'prog';
+  const txt = el('span');
+  txt.append(el('strong', sc.school + ' – ' + sc.program));
+  txt.append(el('br'));
+  txt.append(el('span', 'Due ' + fmtDate(sc.deadline) + ' · ' + sc.address.replace(/\n/g, ', '), 'mut small'));
+  lab.append(cb, txt);
+  $('programs').append(lab);
+});
+
+$('go').addEventListener('click', () => {
+  const notes = $('notes').value.trim();
+  const programs = [...document.querySelectorAll('.prog')].filter(c => c.checked).map(c => +c.value);
+  const st = $('status');
+  st.hidden = false; st.className = 'notice';
+  if (notes.length < 20) { st.textContent = 'Please add a sentence or two of your own observations first.'; st.className = 'notice warn'; return; }
+  if (!programs.length) { st.textContent = 'Pick at least one school.'; st.className = 'notice warn'; return; }
+  $('go').disabled = true;
+  st.textContent = 'Writing ' + programs.length + ' draft' + (programs.length > 1 ? 's' : '') + '… this usually takes 15–30 seconds each. Keep this page open.';
+  call({ action: 'generate', id: P.id, t: TOKEN, opts: {
+      notes, schools: programs, extra: $('extra').value.trim(),
+      length: (document.querySelector('input[name=len]:checked') || {}).value,
+      credentials: $('cred').checked,
+    } })
+    .then(out => {
+      if (!out.ok) throw new Error(out.error || 'Something went wrong. Nothing was saved.');
+      const res = out.results;
+      $('go').disabled = false;
+      st.textContent = 'Done. The draft' + (res.length > 1 ? 's are' : ' is') + ' below and in your email.';
+      res.forEach(x => {
+        const d = el('div', null, 'result');
+        d.append(el('div', x.program));
+        const a = el('a', 'Open Google Doc'); a.href = x.url; a.target = '_blank'; d.append(a);
+        if (x.flags && x.flags.length) { const ul = el('ul', null, 'flags'); x.flags.forEach(f => ul.append(el('li', f))); d.append(ul); }
+        $('results').append(d);
+      });
+    })
+    .catch(err => {
+      $('go').disabled = false;
+      st.className = 'notice err';
+      st.textContent = (err && err.message) || 'Something went wrong. Nothing was saved.';
+    });
+});
+}
+</script>
+</body>
+</html>
