@@ -8,61 +8,58 @@
 <meta property="og:title" content="Professor Cassandra Neitling · Microbiology">
 <meta property="og:description" content="Course information, assignments and grading, recommendation letter requests, and career resources.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#1f6f5c">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231f6f5c'/%3E%3Cellipse cx='32' cy='32' rx='18' ry='11' fill='none' stroke='white' stroke-width='4' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='27' cy='34' r='3' fill='white'/%3E%3Ccircle cx='37' cy='29' r='3' fill='white'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0e6e8c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e6e8c'/%3E%3Cellipse cx='32' cy='32' rx='18' ry='11' fill='none' stroke='white' stroke-width='4' transform='rotate(-30 32 32)'/%3E%3Ccircle cx='27' cy='34' r='3' fill='white'/%3E%3Ccircle cx='37' cy='29' r='3' fill='white'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f6f2; --surface:#ffffff; --ink:#1d2321; --muted:#5d6763; --line:#e3e1da;
-  --accent:#1f6f5c; --accent-ink:#ffffff; --accent-soft:#e3f0ec; --warn:#8a5a00; --warn-soft:#fff4dc;
-  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 24px rgba(0,0,0,.05);
+  --bg:#f6f7f7; --surface:#ffffff; --ink:#13202a; --muted:#56636d; --line:#dde2e5; --grid:rgba(19,32,42,.045);
+  --accent:#0e6e8c; --accent-2:#5b6b78; --accent-ink:#ffffff; --accent-soft:#e9f2f6;
+  --warn:#8a5a00; --warn-soft:#fff4dc;
+  --radius:6px; --shadow:0 1px 2px rgba(16,32,42,.05);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:Inter,system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#121614; --surface:#1a201d; --ink:#e8ece9; --muted:#9aa5a0; --line:#2a322e;
-    --accent:#5cc2a6; --accent-ink:#0c1512; --accent-soft:#1f2f2a; --warn:#f0c46a; --warn-soft:#2e2717;
-    --shadow:none;
+    --bg:#0b1317; --surface:#111b20; --ink:#e4ebee; --muted:#92a1aa; --line:#223038; --grid:rgba(228,235,238,.04);
+    --accent:#5fb6d3; --accent-2:#8796a1; --accent-ink:#071116; --accent-soft:#12262e; --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#121614; --surface:#1a201d; --ink:#e8ece9; --muted:#9aa5a0; --line:#2a322e;
-  --accent:#5cc2a6; --accent-ink:#0c1512; --accent-soft:#1f2f2a; --warn:#f0c46a; --warn-soft:#2e2717;
-  --shadow:none;
+  --bg:#0b1317; --surface:#111b20; --ink:#e4ebee; --muted:#92a1aa; --line:#223038; --grid:rgba(228,235,238,.04);
+  --accent:#5fb6d3; --accent-2:#8796a1; --accent-ink:#071116; --accent-soft:#12262e; --warn:#f0c46a; --warn-soft:#2e2717; --shadow:none;
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:650;line-height:1.2;margin:0 0 .5em}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0 0 .5em;letter-spacing:-.005em}
 a{color:var(--accent)}
-.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+.mono{font-family:var(--mono)}
 
-/* header */
-header{padding:48px 0 24px}
-.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:600;color:var(--accent)}
-header h1{font-size:clamp(32px,6vw,48px);margin:.2em 0 .15em}
-header p{color:var(--muted);margin:0;max-width:60ch}
-
-/* tabs */
-nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 0}
+/* tabs: understated, underline style */
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
-.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;padding:8px 14px;border-radius:999px}
-.tabs a:hover{color:var(--ink);background:var(--accent-soft)}
-.tabs a[aria-current="page"]{background:var(--accent);color:var(--accent-ink)}
+.tabs a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:14.5px;padding:14px 14px 12px;border-bottom:2px solid transparent}
+.tabs a:hover{color:var(--ink)}
+.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
 
-main{padding:32px 0 64px}
+main{padding:36px 0 72px}
 section[hidden]{display:none}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:20px}
+.card h2{font-size:28px}
+.card h3{font-size:20px}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .muted{color:var(--muted)}
-.tag{display:inline-block;font-size:13px;padding:2px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);margin:0 6px 6px 0}
+.tag{display:inline-block;font:500 12.5px/1.4 var(--mono);padding:4px 9px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--bg);margin:0 6px 8px 0}
+.sec{display:block;font:500 12px/1 var(--mono);letter-spacing:.14em;color:var(--accent);margin-bottom:10px;text-transform:uppercase}
 
-/* placeholder marker — remove once real content goes in */
-.ph{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:8px;padding:2px 8px;font-size:14px}
-.ph-block{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:10px;padding:14px 16px;font-size:14px;margin:8px 0}
-/* Placeholders are visible only in preview mode (add ?draft=1 to the URL). Live visitors never see them. */
+/* placeholder marker (visible only with ?draft=1) */
+.ph{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:4px;padding:2px 8px;font-size:14px}
+.ph-block{background:var(--warn-soft);color:var(--warn);border:1px dashed var(--warn);border-radius:6px;padding:14px 16px;font-size:14px;margin:8px 0}
 body:not(.draft) .ph, body:not(.draft) .ph-block{display:none}
 body.draft .live-only{display:none}
 body:not(.draft) .draft-only{display:none}
@@ -70,8 +67,9 @@ body:not(.draft) .draft-only{display:none}
 body.draft .draft-banner{display:block;background:var(--warn-soft);color:var(--warn);text-align:center;font-size:13px;padding:6px 16px;border-bottom:1px dashed var(--warn)}
 
 table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{font-weight:600;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 11.5px/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+td:nth-child(2){font-variant-numeric:tabular-nums}
 .table-scroll{overflow-x:auto}
 
 /* form */
@@ -79,80 +77,75 @@ form .row{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240
 label{display:block;font-weight:500;font-size:14px;margin:16px 0 6px}
 label .req{color:var(--accent)}
 .hint{font-weight:400;color:var(--muted);font-size:13px}
-input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px}
 textarea{min-height:110px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
-fieldset{border:0;padding:0;margin:28px 0 0}
-legend{font-family:Fraunces,Georgia,serif;font-size:20px;font-weight:650;padding:0}
+fieldset{border:0;padding:0;margin:32px 0 0}
+legend{font-family:var(--serif);font-size:21px;font-weight:600;padding:0}
 .check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
 .check input{width:auto;margin-top:5px}
 .hp{position:absolute;left:-9999px}
-button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:12px 24px;cursor:pointer;margin-top:24px}
+button{font:inherit;font-weight:600;background:var(--accent);color:var(--accent-ink);border:0;border-radius:4px;padding:12px 24px;cursor:pointer;margin-top:24px;letter-spacing:.01em}
 button:disabled{opacity:.6;cursor:default}
-.school{border:1px solid var(--line);border-radius:12px;padding:4px 16px 16px;margin-top:16px;background:var(--bg)}
+.school{border:1px solid var(--line);border-radius:var(--radius);padding:4px 16px 16px;margin-top:16px;background:var(--bg)}
 .school-head{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
-button.secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent);padding:10px 18px;margin-top:14px}
+.school-num{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:10px 18px;margin-top:14px}
 button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:500;font-size:14px;text-decoration:underline}
-.notice{border-radius:10px;padding:14px 16px;margin-top:16px;background:var(--accent-soft);color:var(--ink)}
+.notice{border-radius:var(--radius);padding:14px 16px;margin-top:16px;background:var(--accent-soft);color:var(--ink);border-left:3px solid var(--accent)}
 
 /* ---------- hero ---------- */
-:root{--c1:#1f8a70;--c2:#e86a5a;--c3:#e0a526;--c4:#7a5cc7;--c5:#2f8fd6}
-.hero{position:relative;overflow:hidden;padding:40px 0 0;background:
-  radial-gradient(900px 400px at 85% 0%, color-mix(in srgb,var(--c5) 14%, transparent), transparent 70%),
-  radial-gradient(700px 380px at 0% 100%, color-mix(in srgb,var(--c1) 14%, transparent), transparent 70%)}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding-bottom:28px}
-.hero h1{font-size:clamp(34px,6vw,56px);margin:.25em 0 .3em;letter-spacing:-.01em}
-.lede{font-size:clamp(16px,2.2vw,19px);color:var(--muted);margin:0 0 18px;max-width:48ch}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;box-shadow:var(--shadow)}
-.portrait{position:relative;margin:0;justify-self:center;width:min(100%,340px)}
-.portrait img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:28px;box-shadow:0 18px 50px rgba(0,0,0,.18);z-index:1}
-@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
-.ring{position:absolute;inset:-12px;border-radius:36px;background:conic-gradient(from var(--ang),var(--c1),var(--c5),var(--c4),var(--c2),var(--c3),var(--c1));opacity:.9;animation:flow 10s linear infinite}
-.ring::after{content:"";position:absolute;inset:6px;border-radius:30px;background:var(--bg)}
-.badge{position:absolute;z-index:2;filter:drop-shadow(0 6px 14px rgba(0,0,0,.18))}
-.badge.b1{width:62px;height:62px;top:-22px;right:-18px;color:var(--c2);animation:bob 5s ease-in-out infinite}
-.badge.b2{width:96px;height:56px;bottom:-16px;left:-28px;color:var(--c1);animation:bob 6s ease-in-out infinite reverse}
-.float-layer{position:absolute;inset:0;pointer-events:none}
-.fl{position:absolute;height:auto;aspect-ratio:1.4;opacity:.16;animation:drift 18s ease-in-out infinite}
-.fl.c1{color:var(--c1)}.fl.c2{color:var(--c2);animation-duration:22s}.fl.c3{color:var(--c3);animation-duration:16s}.fl.c4{color:var(--c4);animation-duration:24s}.fl.c5{color:var(--c5);animation-duration:20s}
-@keyframes drift{0%,100%{transform:translate(0,0) rotate(0)}33%{transform:translate(14px,-18px) rotate(12deg)}66%{transform:translate(-10px,10px) rotate(-8deg)}}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(8deg)}}
-@keyframes flow{to{--ang:360deg}}
-/* DNA double helix */
-.dna{display:flex;justify-content:space-between;height:64px;padding:0 8px;margin-top:4px;overflow:hidden}
-.dna i{position:relative;flex:0 0 auto;width:2px;height:100%;animation:twist 3.2s ease-in-out infinite}
-.dna i::before,.dna i::after{content:"";position:absolute;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%}
-.dna i::before{top:0;background:var(--c1)} .dna i::after{bottom:0;background:var(--c4)}
-.dna i b{position:absolute;left:0;right:0;top:8px;bottom:8px;background:linear-gradient(var(--c1) 50%,var(--c4) 50%);opacity:.35}
-@keyframes twist{0%,100%{transform:scaleY(1)}50%{transform:scaleY(-1)}}
-/* microbe gallery */
-.microbes{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-top:6px}
-.microbe{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;transition:transform .25s,box-shadow .25s}
-.microbe:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.10)}
-.microbe svg{width:96px;height:72px;margin:4px auto 10px;display:block}
-.microbe:hover svg{animation:wiggle .8s ease-in-out}
-.microbe h3{margin:0 0 4px;font-size:19px}
-.microbe p{margin:0;font-size:14px;color:var(--muted)}
-@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) scale(1.06)}75%{transform:rotate(8deg) scale(1.06)}}
-.h2-icon{display:flex;align-items:center;gap:12px}
-.h2-icon svg{width:44px;height:34px;flex:0 0 auto}
-@media (max-width:760px){
-  .hero-grid{grid-template-columns:1fr;gap:28px;text-align:left}
-  .portrait{width:min(78%,300px);order:-1}
-  .badge.b2{left:-14px}
-  .dna{height:48px}
-}
-@media (prefers-reduced-motion: reduce){
-  .ring,.badge,.fl,.dna i,.microbe:hover svg{animation:none!important}
-  .microbe:hover{transform:none}
-}
-.welcome{margin:22px 0 0;padding:18px 22px;border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 14px 14px 0}
-.welcome p{margin:0;font-family:Fraunces,Georgia,serif;font-size:19px;line-height:1.55}
-.welcome footer{border:0;padding:10px 0 0;margin:0;font-size:14px;color:var(--accent);font-weight:600}
+.hero{position:relative;overflow:hidden;padding:56px 0 0;border-bottom:1px solid var(--line);
+  background-color:var(--bg);
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:24px 24px}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:56px;align-items:center;padding-bottom:36px}
+.eyebrow{font:500 12px/1.4 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(36px,5.6vw,58px);font-weight:600;margin:.35em 0 .3em;letter-spacing:-.015em}
+.lede{font-size:clamp(16px,2vw,19px);color:var(--muted);margin:0 0 26px;max-width:50ch}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0;max-width:520px}
+.facts div{padding:12px 22px 12px 0;margin-right:22px;border-right:1px solid var(--line)}
+.facts div:last-child{border-right:0;margin-right:0}
+.facts dt{font:500 11px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.facts dd{margin:0;font-family:var(--serif);font-size:18px;font-weight:600}
+.portrait{position:relative;margin:0;justify-self:end;width:min(100%,330px);padding:10px;background:var(--surface);border:1px solid var(--line)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+/* reticle corner marks, like a microscope field */
+.portrait::before,.portrait::after{content:"";position:absolute;width:18px;height:18px;border:1.5px solid var(--accent)}
+.portrait::before{top:-7px;left:-7px;border-right:0;border-bottom:0}
+.portrait::after{bottom:-7px;right:-7px;border-left:0;border-top:0}
+.portrait figcaption{font:500 11.5px/1.4 var(--mono);letter-spacing:.06em;color:var(--muted);padding:10px 2px 0;display:flex;justify-content:space-between}
+/* DNA double helix (drawn by script) */
+.dna{display:block;width:100%;height:58px;margin:0;color:var(--accent)}
+.dna .s2{color:var(--accent-2)}
+
+/* specimen plates */
+.microbes{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));margin-top:14px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.microbe{padding:20px 18px 22px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);transition:background .2s}
+.microbe:hover{background:var(--accent-soft)}
+.microbe .fig{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.microbe svg{width:100%;height:84px;margin:14px 0 12px;display:block;color:var(--accent)}
+.microbe h3{margin:0 0 2px;font-size:19px}
+.microbe .eg{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px;margin:0 0 8px}
+.microbe .size{font:500 12px/1.4 var(--mono);color:var(--accent);margin:0 0 8px}
+.microbe p{margin:0;font-size:14px;color:var(--muted);line-height:1.55}
+
+.welcome{margin:24px 0 0;padding:4px 0 4px 22px;border-left:2px solid var(--accent)}
+.welcome p{margin:0;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6}
+.welcome footer{border:0;padding:12px 0 0;margin:0;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
 .welcome footer::before{content:"— "}
-footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
-@media (max-width:520px){.card{padding:18px}}
+
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13.5px}
+@media (max-width:760px){
+  .hero{padding-top:36px}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .portrait{justify-self:start;width:min(80%,300px);order:-1}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .facts div{padding-right:12px;margin-right:12px}
+  .facts dd{font-size:16px}
+  .card{padding:20px}
+  .card h2{font-size:24px}
+}
 </style>
 </head>
 <body>
@@ -160,77 +153,75 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="m-bacillus" viewBox="0 0 120 70">
-      <path d="M14 35 C4 28 2 18 -2 14 M14 35 C4 42 2 52 -2 56 M106 35 C116 28 118 18 122 14 M106 35 C116 42 118 52 122 56" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" opacity=".55"/>
-      <rect x="12" y="16" width="96" height="38" rx="19" fill="currentColor"/>
-      <rect x="18" y="21" width="84" height="28" rx="14" fill="#fff" opacity=".18"/>
-      <circle cx="40" cy="33" r="4" fill="#fff" opacity=".55"/><circle cx="62" cy="38" r="3" fill="#fff" opacity=".45"/><circle cx="80" cy="30" r="3.5" fill="#fff" opacity=".5"/>
-    </symbol>
-    <symbol id="m-coccus" viewBox="0 0 100 100">
-      <g fill="currentColor"><circle cx="30" cy="34" r="16"/><circle cx="56" cy="28" r="16"/><circle cx="72" cy="52" r="16"/><circle cx="46" cy="58" r="16"/><circle cx="24" cy="66" r="15"/><circle cx="52" cy="84" r="13"/></g>
-      <g fill="#fff" opacity=".35"><circle cx="25" cy="29" r="5"/><circle cx="51" cy="23" r="5"/><circle cx="67" cy="47" r="5"/><circle cx="41" cy="53" r="5"/><circle cx="19" cy="61" r="4.5"/><circle cx="48" cy="80" r="4"/></g>
-    </symbol>
-    <symbol id="m-phage" viewBox="0 0 80 120">
-      <polygon points="40,4 64,18 64,46 40,60 16,46 16,18" fill="currentColor"/>
-      <polygon points="40,12 56,21 56,43 40,52 24,43 24,21" fill="#fff" opacity=".22"/>
-      <rect x="35" y="60" width="10" height="30" rx="3" fill="currentColor"/>
-      <rect x="28" y="88" width="24" height="5" rx="2.5" fill="currentColor"/>
-      <path d="M30 92 L12 112 M36 93 L28 116 M44 93 L52 116 M50 92 L68 112" stroke="currentColor" stroke-width="3" stroke-linecap="round" fill="none"/>
-    </symbol>
-    <symbol id="m-virus" viewBox="0 0 100 100">
-      <g stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
-        <path d="M50 8V20M50 80V92M8 50H20M80 50H92M20 20l9 9M71 71l9 9M80 20l-9 9M29 71l-9 9"/>
+    <!-- Technical line drawings (stroke only), drawn for this site -->
+    <symbol id="m-bacillus" viewBox="0 0 200 84">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="46" y="24" width="108" height="36" rx="18"/>
+        <rect x="51" y="29" width="98" height="26" rx="13" opacity=".45"/>
+        <path d="M74 42c6-7 12 7 18 0s12 7 18 0 12 7 18 0" opacity=".8"/>
+        <path d="M46 42C34 34 30 50 18 42S6 34 2 40"/>
+        <path d="M154 42c12-8 16 8 28 0s12-6 16-2"/>
+        <path d="M60 26c-6-10-2-18-10-24M140 58c6 10 2 18 10 24" opacity=".7"/>
       </g>
-      <g fill="currentColor"><circle cx="50" cy="8" r="4.5"/><circle cx="50" cy="92" r="4.5"/><circle cx="8" cy="50" r="4.5"/><circle cx="92" cy="50" r="4.5"/><circle cx="20" cy="20" r="4.5"/><circle cx="80" cy="80" r="4.5"/><circle cx="80" cy="20" r="4.5"/><circle cx="20" cy="80" r="4.5"/></g>
-      <circle cx="50" cy="50" r="30" fill="currentColor"/>
-      <circle cx="40" cy="42" r="9" fill="#fff" opacity=".25"/><circle cx="60" cy="60" r="6" fill="#fff" opacity=".2"/>
+      <g fill="currentColor"><circle cx="66" cy="36" r="1.6"/><circle cx="132" cy="48" r="1.6"/><circle cx="120" cy="34" r="1.3"/></g>
     </symbol>
-    <symbol id="m-yeast" viewBox="0 0 110 90">
-      <ellipse cx="44" cy="48" rx="34" ry="28" fill="currentColor"/>
-      <ellipse cx="86" cy="30" rx="18" ry="15" fill="currentColor"/>
-      <ellipse cx="38" cy="44" rx="10" ry="9" fill="#fff" opacity=".35"/>
-      <circle cx="58" cy="60" r="5" fill="#fff" opacity=".25"/><circle cx="88" cy="28" r="4.5" fill="#fff" opacity=".3"/>
+    <symbol id="m-virus" viewBox="0 0 200 84">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">
+        <polygon points="100,12 128,26 128,58 100,72 72,58 72,26"/>
+        <path d="M100 12L100 42 128 58M100 42 72 58M72 26l28 16 28-16" opacity=".55"/>
+        <path d="M100 12V4M128 26l7-4M128 58l7 4M100 72v8M72 58l-7 4M72 26l-7-4"/>
+      </g>
+      <g fill="currentColor"><circle cx="100" cy="3.5" r="2.4"/><circle cx="136" cy="21.5" r="2.4"/><circle cx="136" cy="62.5" r="2.4"/><circle cx="100" cy="80.5" r="2.4"/><circle cx="64" cy="62.5" r="2.4"/><circle cx="64" cy="21.5" r="2.4"/></g>
     </symbol>
-    <symbol id="m-amoeba" viewBox="0 0 120 100">
-      <path d="M20 52 C10 30 34 18 48 26 C58 8 84 10 88 30 C110 28 116 54 98 62 C108 82 82 94 68 80 C56 96 28 92 30 74 C12 74 8 60 20 52Z" fill="currentColor"/>
-      <circle cx="62" cy="52" r="13" fill="#fff" opacity=".3"/><circle cx="62" cy="52" r="5.5" fill="#fff" opacity=".45"/>
-      <circle cx="38" cy="44" r="4" fill="#fff" opacity=".3"/><circle cx="84" cy="70" r="3.5" fill="#fff" opacity=".3"/>
+    <symbol id="m-yeast" viewBox="0 0 200 84">
+      <g fill="none" stroke="currentColor" stroke-width="1.6">
+        <ellipse cx="88" cy="46" rx="32" ry="27"/>
+        <ellipse cx="132" cy="30" rx="15" ry="13"/>
+        <circle cx="84" cy="44" r="9"/>
+        <ellipse cx="100" cy="58" rx="7" ry="5" opacity=".6"/>
+        <path d="M117 36c3-2 6-2 8-1" opacity=".7"/>
+      </g>
+      <circle cx="84" cy="44" r="2.6" fill="currentColor"/>
+      <g fill="currentColor" opacity=".7"><circle cx="70" cy="58" r="1.4"/><circle cx="74" cy="32" r="1.2"/><circle cx="134" cy="28" r="1.3"/></g>
     </symbol>
-    <symbol id="m-worm" viewBox="0 0 140 70">
-      <path d="M10 46 C28 12 48 12 62 36 S98 62 114 30 C118 22 126 18 132 22" fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
-      <path d="M10 46 C28 12 48 12 62 36 S98 62 114 30" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9" opacity=".4"/>
-      <circle cx="131" cy="22" r="2.4" fill="#fff" opacity=".8"/>
+    <symbol id="m-amoeba" viewBox="0 0 200 84">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round">
+        <path d="M58 44c-12-12 2-30 18-24 6-14 30-16 38-2 16-8 34 4 28 18 16 4 18 22 2 26 4 14-18 20-28 10-10 12-34 10-36-4-16 2-30-10-22-24z"/>
+        <circle cx="104" cy="44" r="11"/>
+        <circle cx="80" cy="36" r="5" opacity=".65"/>
+        <circle cx="128" cy="58" r="4" opacity=".65"/>
+      </g>
+      <circle cx="104" cy="44" r="3.4" fill="currentColor"/>
     </symbol>
-    <symbol id="m-spiral" viewBox="0 0 140 50">
-      <path d="M8 25 C20 5 32 5 44 25 S68 45 80 25 S104 5 116 25 S128 40 134 32" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+    <symbol id="m-worm" viewBox="0 0 200 84">
+      <g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 54C38 20 62 18 84 40s46 30 70 6c10-10 22-14 32-10"/>
+        <path d="M14 54C36 30 60 30 80 50s50 24 76 0c10-9 20-12 30-12" opacity=".6"/>
+        <path d="M30 40l4 5M46 32l3 6M62 30l1 7M78 36l-1 7M94 48l-2 6M110 54l-1 6M126 52l1 6M142 44l2 5M158 34l3 4" opacity=".55"/>
+      </g>
+      <circle cx="188" cy="40" r="2" fill="currentColor"/>
     </symbol>
   </defs>
 </svg>
 
 <header class="hero">
-  <div class="float-layer" aria-hidden="true">
-    <svg class="fl c1" style="top:12%;left:4%;width:90px"><use href="#m-bacillus"/></svg>
-    <svg class="fl c2" style="top:62%;left:2%;width:60px"><use href="#m-virus"/></svg>
-    <svg class="fl c3" style="top:8%;left:46%;width:54px"><use href="#m-coccus"/></svg>
-    <svg class="fl c4" style="top:70%;left:40%;width:110px"><use href="#m-spiral"/></svg>
-    <svg class="fl c5" style="top:6%;right:4%;width:46px"><use href="#m-phage"/></svg>
-    <svg class="fl c1" style="top:78%;right:6%;width:70px"><use href="#m-yeast"/></svg>
-  </div>
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <div class="eyebrow">Microbiology · Folsom Lake College</div>
+      <div class="eyebrow">Microbiology &middot; Folsom Lake College</div>
       <h1>Professor Cassandra Neitling</h1>
-      <p class="lede">Professor of Microbiology. Exploring the invisible world of bacteria, viruses, fungi and more, and preparing students for careers in healthcare.</p>
-      <div class="chips"><span>🔬 Microscopy</span><span>🧫 Culturing</span><span>🧬 Public health</span></div>
+      <p class="lede">Professor of Microbiology, teaching the biology of bacteria, viruses, fungi and parasites, and preparing students for careers in nursing and the health professions.</p>
+      <dl class="facts">
+        <div><dt>Course</dt><dd>BIOL 442</dd></div>
+        <div><dt>Units</dt><dd>5</dd></div>
+        <div><dt>Format</dt><dd>Lecture + Lab</dd></div>
+      </dl>
     </div>
     <figure class="portrait">
-      <div class="ring" aria-hidden="true"></div>
       <img src="assets/casie-neitling.jpg" width="800" height="1000" alt="Professor Cassandra Neitling outdoors by a mountain lake" fetchpriority="high">
-      <svg class="badge b1" aria-hidden="true"><use href="#m-virus"/></svg>
-      <svg class="badge b2" aria-hidden="true"><use href="#m-bacillus"/></svg>
+      <figcaption><span>Prof. C. A. Neitling</span><span>Microbiology</span></figcaption>
     </figure>
   </div>
-  <div class="dna" id="dna" aria-hidden="true"></div>
+  <svg class="dna" id="dna" aria-hidden="true" preserveAspectRatio="none"></svg>
 </header>
 
 <nav aria-label="Sections">
@@ -248,7 +239,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <!-- ABOUT -->
   <section id="about" data-tab>
     <div class="card">
-      <h2 class="h2-icon"><svg style="color:var(--c1)" aria-hidden="true"><use href="#m-bacillus"/></svg>About Microbiology</h2>
+      <span class="sec">Section 01</span><h2>About Microbiology</h2>
       <p>Microbiology is the study of the bacteria, viruses, fungi, protozoa and helminths that shape human health. In <strong>BIOL 442: General Microbiology and Public Health</strong>, students examine how these organisms are built, how they live and reproduce, how they cause disease, and how we identify, treat and prevent infection, from individual patients to global epidemics and pandemics.</p>
       <p>The course is taught as preparation for careers in healthcare. Most students are headed toward nursing and other health professions, and the lab is where much of the learning happens: microscopy, culturing bacteria, and identifying unknown microorganisms from a simulated patient infection.</p>
       <blockquote class="welcome">
@@ -274,14 +265,15 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       </div>
     </div>
     <div class="card">
-      <h3>Meet the microbes</h3>
-      <p class="muted" style="margin-top:0">The five groups of organisms students study in BIOL 442.</p>
+      <span class="sec">Plates 1&ndash;5</span>
+      <h3>The organisms of microbiology</h3>
+      <p class="muted" style="margin-top:0">The five groups studied in BIOL 442, with typical sizes.</p>
       <div class="microbes">
-        <div class="microbe"><svg style="color:var(--c1)" aria-hidden="true"><use href="#m-bacillus"/></svg><h3>Bacteria</h3><p>Single-celled organisms with no nucleus. A few cause disease; most are harmless or helpful.</p></div>
-        <div class="microbe"><svg style="color:var(--c2)" aria-hidden="true"><use href="#m-virus"/></svg><h3>Viruses</h3><p>Not cells at all: genetic material in a protein coat that must take over a host cell to copy itself.</p></div>
-        <div class="microbe"><svg style="color:var(--c3)" aria-hidden="true"><use href="#m-yeast"/></svg><h3>Fungi</h3><p>Yeasts and molds. Some cause infections; others give us bread and penicillin.</p></div>
-        <div class="microbe"><svg style="color:var(--c4)" aria-hidden="true"><use href="#m-amoeba"/></svg><h3>Protozoa</h3><p>Single-celled organisms with a nucleus that move and feed, including the parasite that causes malaria.</p></div>
-        <div class="microbe"><svg style="color:var(--c5)" aria-hidden="true"><use href="#m-worm"/></svg><h3>Helminths</h3><p>Parasitic worms: many-celled and often visible without a microscope.</p></div>
+        <div class="microbe"><div class="fig">Fig. 1</div><svg aria-hidden="true"><use href="#m-bacillus"/></svg><h3>Bacteria</h3><p class="eg">e.g. Escherichia, Staphylococcus</p><p class="size">0.5&ndash;5 &micro;m</p><p>Single cells without a nucleus. Most are harmless or essential; a few cause disease.</p></div>
+        <div class="microbe"><div class="fig">Fig. 2</div><svg aria-hidden="true"><use href="#m-virus"/></svg><h3>Viruses</h3><p class="eg">e.g. influenza, SARS-CoV-2</p><p class="size">20&ndash;300 nm</p><p>Not cells: genetic material in a protein coat that must take over a host cell to replicate.</p></div>
+        <div class="microbe"><div class="fig">Fig. 3</div><svg aria-hidden="true"><use href="#m-yeast"/></svg><h3>Fungi</h3><p class="eg">e.g. Candida, Aspergillus</p><p class="size">Yeast cells 3&ndash;10 &micro;m</p><p>Yeasts and molds. Some cause infections; others give us bread and penicillin.</p></div>
+        <div class="microbe"><div class="fig">Fig. 4</div><svg aria-hidden="true"><use href="#m-amoeba"/></svg><h3>Protozoa</h3><p class="eg">e.g. Plasmodium, Giardia</p><p class="size">10&ndash;200 &micro;m</p><p>Single cells with a nucleus that move and feed, including the parasite that causes malaria.</p></div>
+        <div class="microbe"><div class="fig">Fig. 5</div><svg aria-hidden="true"><use href="#m-worm"/></svg><h3>Helminths</h3><p class="eg">e.g. tapeworms, roundworms</p><p class="size">Millimeters to meters</p><p>Parasitic worms: multicellular animals, often visible without a microscope.</p></div>
       </div>
     </div>
     <div class="card">
@@ -300,7 +292,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <!-- SCHEDULE -->
   <section id="schedule" data-tab hidden>
     <div class="card">
-      <h2 class="h2-icon"><svg style="color:var(--c3)" aria-hidden="true"><use href="#m-coccus"/></svg>Class Schedule</h2>
+      <span class="sec">Section 02</span><h2>Class Schedule</h2>
       <p class="muted">Fall 2026</p>
       <div class="table-scroll">
         <table>
@@ -337,7 +329,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <!-- ASSIGNMENTS -->
   <section id="assignments" data-tab hidden>
     <div class="card">
-      <h2 class="h2-icon"><svg style="color:var(--c2)" aria-hidden="true"><use href="#m-phage"/></svg>Major Assignments &amp; Grading</h2>
+      <span class="sec">Section 03</span><h2>Major Assignments &amp; Grading</h2>
       <p style="margin:0">BIOL 442 · Fall 2026 · <strong>500 points total</strong></p>
     </div>
     <div class="card">
@@ -397,7 +389,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <!-- LETTERS -->
   <section id="letters" data-tab hidden>
     <div class="card">
-      <h2 class="h2-icon"><svg style="color:var(--c4)" aria-hidden="true"><use href="#m-yeast"/></svg>Request a Letter of Recommendation</h2>
+      <span class="sec">Section 04</span><h2>Request a Letter of Recommendation</h2>
       <p>Fill out this form completely. The more specific you are, the stronger your letter can be.</p>
       <div class="ph-block">PLACEHOLDER: Professor Neitling's policy — minimum notice before the deadline (e.g. 3 weeks), which students she writes for, and how letters are submitted.</div>
       <div id="form-closed" class="notice" hidden>Letter requests will open here soon. In the meantime, please contact Professor Neitling directly.</div>
@@ -491,7 +483,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <!-- CAREERS -->
   <section id="careers" data-tab hidden>
     <div class="card">
-      <h2 class="h2-icon"><svg style="color:var(--c5)" aria-hidden="true"><use href="#m-spiral"/></svg>Career Opportunities in Microbiology</h2>
+      <span class="sec">Section 05</span><h2>Career Opportunities in Microbiology</h2>
       <p class="live-only muted" style="margin:0">Career resources are coming soon.</p>
       <div class="ph-block">PLACEHOLDER: career paths, with sources cited. Content to be decided with Casie (transfer pathways, clinical lab, public health, biotech, research, etc.).</div>
     </div>
@@ -533,15 +525,30 @@ addEventListener('hashchange', () => { show(); scrollTo({top:0}); });
 show();
 document.getElementById('yr').textContent = new Date().getFullYear();
 
-// DNA helix: rungs flip with staggered timing to look like a rotating double helix
+// DNA double helix: two sinusoidal strands with base-pair rungs, drifting slowly (static if reduced motion is preferred)
 (function(){
-  const dna = document.getElementById('dna'); if (!dna) return;
-  const n = Math.max(24, Math.min(64, Math.round(dna.clientWidth / 22)));
-  for (let i = 0; i < n; i++) {
-    const r = document.createElement('i'); r.appendChild(document.createElement('b'));
-    r.style.animationDelay = (-i * 0.16) + 's';
-    dna.appendChild(r);
+  const svg = document.getElementById('dna'); if (!svg) return;
+  const NS = 'http://www.w3.org/2000/svg';
+  const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W = 0, H = 58, phase = 0;
+  const g = document.createElementNS(NS, 'g'); svg.appendChild(g);
+  const s1 = document.createElementNS(NS, 'path'), s2 = document.createElementNS(NS, 'path');
+  [s1, s2].forEach((p, i) => { p.setAttribute('fill', 'none'); p.setAttribute('stroke', 'currentColor'); p.setAttribute('stroke-width', '1.5'); if (i) p.setAttribute('class', 's2'); });
+  const rungs = document.createElementNS(NS, 'g'); rungs.setAttribute('stroke', 'currentColor'); rungs.setAttribute('stroke-width', '1'); rungs.setAttribute('opacity', '.28');
+  g.append(rungs, s1, s2);
+  const P = 150, A = 20, STEP = 10;
+  function draw(){
+    W = svg.clientWidth || 1000; svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const y = (x, o) => H / 2 + A * Math.sin((x + phase) * 2 * Math.PI / P + o);
+    let d1 = '', d2 = '';
+    for (let x = 0; x <= W; x += 4) { d1 += (x ? 'L' : 'M') + x + ' ' + y(x, 0).toFixed(1); d2 += (x ? 'L' : 'M') + x + ' ' + y(x, Math.PI).toFixed(1); }
+    s1.setAttribute('d', d1); s2.setAttribute('d', d2);
+    let r = '';
+    for (let x = (STEP - (phase % STEP)) % STEP; x <= W; x += STEP) r += `M${x.toFixed(1)} ${y(x, 0).toFixed(1)}V${y(x, Math.PI).toFixed(1)}`;
+    rungs.innerHTML = `<path d="${r}"/>`;
   }
+  draw(); addEventListener('resize', draw);
+  if (!reduce) { (function tick(){ phase = (phase + 0.25) % P; draw(); requestAnimationFrame(tick); })(); }
 })();
 
 // Letter request form
