@@ -740,7 +740,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
   </section>
 
   <!-- ===================== LETTERS ===================== -->
-  <section id="tab-letters" data-tab hidden data-title="Recommendation Letters" data-sub="Request a letter of recommendation from Professor Neitling. One request covers every school you're applying to.">
+  <section id="tab-letters" data-tab hidden data-title="Recommendation Letters" data-sub="Request a letter of recommendation from Professor Neitling for a college or nursing program, a job, or a scholarship. One request covers all of them.">
     <div class="band">
       <div class="wrap letters-layout">
         <div class="card" style="padding:clamp(22px,4vw,40px)">
@@ -763,7 +763,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
                   <select id="title" name="title" required><option value="">Choose…</option><option>Ms.</option><option>Mrs.</option><option>Mr.</option><option>Mx.</option><option value="None">No title (use my name)</option></select></div>
                 <div><label for="pronouns">Pronouns <span class="req">*</span></label><input id="pronouns" name="pronouns" placeholder="e.g. she/her" required maxlength="40"></div>
               </div>
-              <label for="major">Intended major / field <span class="req">*</span></label><input id="major" name="major" required maxlength="200">
+              <label for="major">Intended major, field or career <span class="req">*</span></label><input id="major" name="major" required maxlength="200">
             </fieldset>
 
             <fieldset>
@@ -783,15 +783,15 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
 
             <fieldset>
               <legend><span class="n">3</span>Where you're applying</legend>
-              <p class="muted" style="margin:6px 0 0;font-size:14px">Add each school separately. Professor Neitling writes a letter tailored to each one.</p>
+              <p class="muted" style="margin:6px 0 0;font-size:14px">Add each application separately: a college, a nursing program, a job, a scholarship, or something else. Professor Neitling writes a letter tailored to each one.</p>
               <div id="schools"></div>
-              <button type="button" id="add-school" class="secondary">+ Add another school</button>
+              <button type="button" id="add-school" class="secondary">+ Add another application</button>
               <div class="row">
                 <div><label for="method">How the letter is submitted <span class="req">*</span></label>
-                  <select id="method" name="method" required><option value="">Choose…</option><option>Online portal (the school emails her a link)</option><option>Email directly to the program</option><option>Mailed paper letter</option><option>Other (explain in comments)</option></select></div>
+                  <select id="method" name="method" required><option value="">Choose…</option><option>Online portal (the school emails her a link)</option><option>Email directly to the program</option><option>Mailed paper letter</option><option>Give it to me to include with my application</option><option>Other (explain in comments)</option></select></div>
                 <div></div>
               </div>
-              <label class="check"><input type="checkbox" name="waived" id="waived"> I have waived (or will waive) my right to view this letter.</label>
+              <label class="check"><input type="checkbox" name="waived" id="waived"> I have waived (or will waive) my right to view this letter <span class="hint">(if the application asks)</span>.</label>
             </fieldset>
 
             <fieldset>
@@ -821,12 +821,23 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           <template id="school-tpl">
             <div class="school">
               <div class="school-head"><strong class="school-num"></strong><button type="button" class="link remove-school">Remove</button></div>
+              <label>This letter is for <span class="req">*</span></label>
+              <select data-k="type" class="type-pick" required>
+                <option value="">Choose…</option>
+                <option value="college">A college or university program</option>
+                <option value="nursing">A nursing program</option>
+                <option value="job">A job or career opportunity</option>
+                <option value="scholarship">A scholarship or award</option>
+                <option value="other">Something else (internship, volunteer or research position…)</option>
+              </select>
               <div class="row">
-                <div><label>School name <span class="req">*</span></label><input data-k="school" required maxlength="200" placeholder="e.g. Sacramento State University"></div>
-                <div><label>Program applying for <span class="req">*</span></label><input data-k="program" required maxlength="200" placeholder="e.g. B.S. Nursing"></div>
+                <div><label><span class="l-org">School name</span> <span class="req">*</span></label><input data-k="school" required maxlength="200"></div>
+                <div><label><span class="l-prog">Program applying for</span> <span class="req">*</span></label><input data-k="program" required maxlength="200"></div>
               </div>
-              <label>Mailing address of the school / program <span class="req">*</span></label>
-              <textarea data-k="address" required maxlength="500" style="min-height:84px" placeholder="Office or department&#10;Street address&#10;City, State ZIP"></textarea>
+              <label>Who should the letter be addressed to? <span class="hint">(optional: a person, committee or office, if you know it)</span></label>
+              <input data-k="contact" maxlength="200" placeholder="e.g. Dr. Jane Smith, Admissions Committee">
+              <label><span class="l-addr">Mailing address of the school / program</span> <span class="req r-addr">*</span><span class="hint o-addr" hidden> (optional)</span></label>
+              <textarea data-k="address" required maxlength="500" style="min-height:84px"></textarea>
               <div class="row">
                 <div><label>Deadline <span class="req">*</span></label><input data-k="deadline" type="date" required></div>
                 <div></div>
@@ -839,9 +850,9 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           <div class="card top">
             <h3>How it works</h3>
             <ol class="steps">
-              <li><strong>Submit one request</strong><span class="muted">List every school you're applying to, each with its own deadline.</span></li>
+              <li><strong>Submit one request</strong><span class="muted">List every school, nursing program, job or scholarship, each with its own deadline.</span></li>
               <li><strong>Save your reference number</strong><span class="muted">It appears on screen after you submit. A screenshot works.</span></li>
-              <li><strong>Professor Neitling reviews it</strong><span class="muted">She writes a letter tailored to each school and contacts you if she needs anything else.</span></li>
+              <li><strong>Professor Neitling reviews it</strong><span class="muted">She writes a letter tailored to each application and contacts you if she needs anything else.</span></li>
             </ol>
           </div>
           <div class="card">
@@ -1118,18 +1129,42 @@ const MAX_SCHOOLS = 6;
 function renumber(){
   const blocks = [...schoolsEl.querySelectorAll('.school')];
   blocks.forEach((b, i) => {
-    b.querySelector('.school-num').textContent = 'School ' + (i + 1);
+    b.querySelector('.school-num').textContent = 'Application ' + (i + 1);
     b.querySelector('.remove-school').hidden = blocks.length === 1;
   });
   addBtn.hidden = blocks.length >= MAX_SCHOOLS;
 }
+// Labels and requirements change with what the letter is for
+const TYPE_UI = {
+  college:     { org:'School name', orgPh:'e.g. Sacramento State University', prog:'Program applying for', progPh:'e.g. B.S. Biology', addr:'Mailing address of the school / program', addrReq:true, contactPh:'e.g. Office of Admissions' },
+  nursing:     { org:'School or college', orgPh:'e.g. Sacramento State University', prog:'Nursing program', progPh:'e.g. B.S. Nursing (BSN), ADN, or LVN', addr:'Mailing address of the nursing program', addrReq:true, contactPh:'e.g. School of Nursing Admissions Committee' },
+  job:         { org:'Employer / organization', orgPh:'e.g. Kaiser Permanente Roseville', prog:'Position / job title', progPh:'e.g. Clinical Laboratory Assistant', addr:'Employer mailing address', addrReq:false, contactPh:'e.g. Jane Smith, Lab Manager, or Hiring Manager' },
+  scholarship: { org:'Organization offering it', orgPh:'e.g. Folsom Rotary Club', prog:'Scholarship or award name', progPh:'e.g. Health Careers Scholarship', addr:'Mailing address', addrReq:false, contactPh:'e.g. Scholarship Selection Committee' },
+  other:       { org:'Organization', orgPh:'e.g. UC Davis Medical Center', prog:'What the letter is for', progPh:'e.g. Summer research internship', addr:'Mailing address', addrReq:false, contactPh:'e.g. Program Coordinator' },
+};
+function applyType(node){
+  const ui = TYPE_UI[node.querySelector('.type-pick').value] || TYPE_UI.college;
+  node.querySelector('.l-org').textContent = ui.org;
+  node.querySelector('.l-prog').textContent = ui.prog;
+  node.querySelector('.l-addr').textContent = ui.addr;
+  node.querySelector('[data-k="school"]').placeholder = ui.orgPh;
+  node.querySelector('[data-k="program"]').placeholder = ui.progPh;
+  node.querySelector('[data-k="contact"]').placeholder = ui.contactPh;
+  const addr = node.querySelector('[data-k="address"]');
+  addr.required = ui.addrReq;
+  addr.placeholder = ui.addrReq ? 'Office or department\nStreet address\nCity, State ZIP' : 'If you have it (many employers and scholarships accept letters by email or portal)';
+  node.querySelector('.r-addr').hidden = !ui.addrReq;
+  node.querySelector('.o-addr').hidden = ui.addrReq;
+}
 function addSchool(){
   const node = document.getElementById('school-tpl').content.firstElementChild.cloneNode(true);
   node.querySelector('.remove-school').addEventListener('click', () => { node.remove(); renumber(); });
+  node.querySelector('.type-pick').addEventListener('change', () => applyType(node));
+  applyType(node);
   schoolsEl.append(node); renumber();
   return node;
 }
-addBtn.addEventListener('click', () => { addSchool().querySelector('input').focus(); });
+addBtn.addEventListener('click', () => { addSchool().querySelector('select').focus(); });
 addSchool();
 
 form.addEventListener('submit', async e => {

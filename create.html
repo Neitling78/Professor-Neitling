@@ -59,7 +59,7 @@
     <label for="notes">Your own observations <span class="mut small">(required: what you remember, what stood out, specific moments)</span></label>
     <textarea id="notes" placeholder="e.g. Stayed after lab to help her partners with the Gram stains; one of the strongest Unknown Bacteria projects this year; always prepared…"></textarea>
 
-    <label>Which schools? <span class="mut small">(one tailored letter each)</span></label>
+    <label>Which letters? <span class="mut small">(one tailored letter each)</span></label>
     <div id="programs"></div>
 
     <label>Length</label>
@@ -144,9 +144,12 @@ rows.forEach(([k, v]) => {
   const lab = el('label', null, 'opt');
   const cb = el('input'); cb.type = 'checkbox'; cb.checked = true; cb.value = i; cb.className = 'prog';
   const txt = el('span');
+  const TYPES = { college: 'College / university', nursing: 'Nursing program', job: 'Job / career', scholarship: 'Scholarship / award', other: 'Other' };
+  txt.append(el('span', (TYPES[sc.type] || TYPES.college).toUpperCase(), 'eyebrow'));
+  txt.append(el('br'));
   txt.append(el('strong', sc.school + ' – ' + sc.program));
   txt.append(el('br'));
-  txt.append(el('span', 'Due ' + fmtDate(sc.deadline) + ' · ' + sc.address.replace(/\n/g, ', '), 'mut small'));
+  txt.append(el('span', ['Due ' + fmtDate(sc.deadline), sc.contact ? 'To: ' + sc.contact : '', (sc.address || '').replace(/\n/g, ', ')].filter(Boolean).join(' · '), 'mut small'));
   lab.append(cb, txt);
   $('programs').append(lab);
 });
@@ -157,7 +160,7 @@ $('go').addEventListener('click', async () => {
   const st = $('status');
   st.hidden = false; st.className = 'notice';
   if (notes.length < 20) { st.textContent = 'Please add a sentence or two of your own observations first.'; st.className = 'notice warn'; return; }
-  if (!picks.length) { st.textContent = 'Pick at least one school.'; st.className = 'notice warn'; return; }
+  if (!picks.length) { st.textContent = 'Pick at least one letter.'; st.className = 'notice warn'; return; }
   $('go').disabled = true;
   $('results').innerHTML = '';
   let ok = 0;
