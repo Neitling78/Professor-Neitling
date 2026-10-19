@@ -21,7 +21,7 @@ Personal page, not an official Folsom Lake College website.
 - Until `FORM_ENDPOINT` is set, the public form shows "requests will open soon."
 
 ## Privacy rules for this repo
-- No student data, API keys, or class meeting times/rooms are ever committed here.
+- No student data or API keys are ever committed here. Class times/rooms are published; update them each semester.
 - This repo is public.
 
 ## Update the site
