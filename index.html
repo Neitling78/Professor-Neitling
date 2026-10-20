@@ -170,14 +170,13 @@ section[hidden]{display:none}
 /* welcome feature */
 .welcome-band{background:var(--brand);color:#fff;position:relative;overflow:hidden}
 .welcome-band::after{content:"\201C";position:absolute;right:4%;top:-60px;font:700 340px/1 var(--serif);color:rgba(255,255,255,.05);pointer-events:none}
-.welcome-band .wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px;position:relative}
-.welcome-band img{width:220px;height:220px;object-fit:cover;object-position:50% 22%;border-radius:50%;border:4px solid rgba(255,255,255,.12)}
+.welcome-band .wrap{padding-top:80px;padding-bottom:80px;position:relative}
 .welcome-band .kicker{color:var(--brand-muted)}
 .welcome-band blockquote{margin:0}
 .welcome-band blockquote p{margin:0;font:italic 400 clamp(20px,2.5vw,27px)/1.55 var(--serif);color:#fff}
 .welcome-band cite{display:block;margin-top:22px;font:600 15px/1.3 var(--sans);font-style:normal;color:#fff}
 .welcome-band cite span{display:block;font-weight:400;color:var(--brand-muted);font-size:14px;margin-top:3px}
-@media (max-width:760px){.welcome-band .wrap{grid-template-columns:1fr;gap:28px;padding-top:56px;padding-bottom:56px}.welcome-band img{width:120px;height:120px}}
+@media (max-width:760px){.welcome-band .wrap{padding-top:56px;padding-bottom:56px}}
 
 /* specimen cards */
 .microbes{display:grid;gap:20px;grid-template-columns:repeat(5,1fr);margin-top:32px}
@@ -297,6 +296,49 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
 .empty{text-align:center;padding:64px 24px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--bg-alt)}
 .empty .ic{margin:0 auto 18px;width:64px;height:64px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
 .empty .ic svg{width:30px;height:30px}
+
+/* old-site bacteriophage art */
+.phage{position:absolute;pointer-events:none;user-select:none;filter:drop-shadow(0 10px 30px rgba(0,0,0,.35))}
+.hero .phage{right:1.5%;top:36px;height:min(78%,400px);opacity:.7;transform:rotate(-10deg);z-index:0}
+.hero-grid{z-index:1}
+@media (max-width:1250px){.hero .phage{right:-40px;opacity:.35}}
+.pagehead .phage{right:6%;top:50%;height:150%;opacity:.8;transform:translateY(-50%) rotate(10deg)}
+@media (max-width:760px){.hero .phage{display:none}.pagehead .phage{right:-20px;opacity:.3}}
+
+/* welcome letter (her own words) */
+.welcome-letter{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:center}
+.welcome-letter h2{color:#fff;font-size:clamp(30px,4vw,42px)}
+.welcome-letter p{color:#dbe9ee;font-size:17.5px;line-height:1.7;margin:0 0 16px}
+.welcome-letter .sign{font:italic 600 24px/1.3 var(--serif);color:#fff;margin:22px 0 0}
+.welcome-letter .sign span{display:block;font:500 12px/1.4 var(--mono);font-style:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-muted);margin-top:8px}
+.classroom{margin:0;position:relative}
+.classroom img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 72%;border-radius:4px;box-shadow:var(--shadow-lg)}
+.classroom::before{content:"";position:absolute;inset:-14px 14px 14px -14px;border:1px solid rgba(196,146,58,.55);border-radius:4px;z-index:0}
+.classroom img{position:relative;z-index:1}
+.classroom figcaption{position:relative;z-index:1;margin-top:12px;font:500 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--brand-muted)}
+@media (max-width:860px){.welcome-letter{grid-template-columns:1fr;gap:36px}.classroom{max-width:340px}}
+
+/* student resources */
+.resources{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));margin-top:28px}
+.res{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.res:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);color:var(--ink)}
+.res .pic{aspect-ratio:16/10;background:linear-gradient(160deg,#0a3442,#061e27);display:grid;place-items:center;color:#7fc7df;overflow:hidden}
+.res .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.res .pic svg{width:56px;height:56px}
+.res .body{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+.res h3{margin:0 0 6px;font-size:20px}
+.res p{margin:0 0 14px;font-size:14.5px;color:var(--muted)}
+.res .go{margin-top:auto;font-weight:600;font-size:14px;color:var(--accent)}
+.res .go::after{content:" \2192"}
+
+/* course files */
+.files{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.files a{display:flex;align-items:center;gap:16px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:border-color .15s}
+.files a:hover{border-color:var(--accent);color:var(--ink)}
+.files .ft{flex:none;width:42px;height:42px;border-radius:6px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font:600 11px/1 var(--mono)}
+.files strong{display:block}
+.files span.d{font-size:13.5px;color:var(--muted)}
+.files .ext{margin-left:auto;color:var(--accent);font-size:14px;font-weight:600;white-space:nowrap}
 
 /* careers */
 .careers{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));margin-top:24px}
@@ -441,6 +483,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
     <a href="#about">About Microbiology</a>
     <a href="#schedule">Class Schedule</a>
     <a href="#assignments">Assignments &amp; Grading</a>
+    <a href="#resources">Student Resources</a>
     <a href="#letters">Recommendation Letters</a>
     <a href="#careers">Career Opportunities</a>
   </div>
@@ -448,6 +491,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
 
 <!-- Interior page header (all tabs except home) -->
 <div class="pagehead" id="pagehead" hidden>
+  <img class="phage" src="assets/phage.png" alt="" aria-hidden="true">
   <div class="wrap">
     <div class="crumbs"><a href="#about">Home</a><span aria-hidden="true">/</span><span id="ph-crumb" style="margin:0;opacity:1"></span></div>
     <h1 id="ph-title"></h1>
@@ -475,6 +519,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           <figcaption>Prof. Cassandra Neitling<span>Microbiology</span></figcaption>
         </figure>
       </div>
+      <img class="phage" src="assets/phage.png" alt="" aria-hidden="true">
       <svg class="dna" id="dna" aria-hidden="true" preserveAspectRatio="none"></svg>
     </div>
 
@@ -483,9 +528,9 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
         <li><a href="#schedule"><span class="circle"><svg aria-hidden="true"><use href="#i-cal"/></svg></span>Class Schedule</a></li>
         <li><a href="#schedule-office"><span class="circle"><svg aria-hidden="true"><use href="#i-clock"/></svg></span>Office Hours</a></li>
         <li><a href="#assignments"><span class="circle"><svg aria-hidden="true"><use href="#i-grade"/></svg></span>Grading</a></li>
-        <li><a href="#schedule-textbook"><span class="circle"><svg aria-hidden="true"><use href="#i-book"/></svg></span>Textbook</a></li>
+        <li><a href="#schedule-files"><span class="circle"><svg aria-hidden="true"><use href="#i-book"/></svg></span>Course Files</a></li>
+        <li><a href="#resources"><span class="circle"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>Student Resources</a></li>
         <li><a href="#letters"><span class="circle"><svg aria-hidden="true"><use href="#i-letter"/></svg></span>Request a Letter</a></li>
-        <li><a href="#careers"><span class="circle"><svg aria-hidden="true"><use href="#i-brief"/></svg></span>Careers</a></li>
       </ul>
     </nav>
 
@@ -517,13 +562,19 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
 
     <div class="welcome-band">
       <div class="wrap">
-        <img src="assets/casie-neitling.jpg" alt="" width="220" height="220" loading="lazy">
-        <div>
-          <div class="kicker">A welcome from your professor</div>
-          <blockquote>
-            <p>I love biology, and microbiology most of all: an invisible world that shapes every part of our health. My greatest joy is watching my students master challenging material, grow in confidence, and go on to successful careers in healthcare. If you are willing to put in the work, I will be right there with you every step of the way.</p>
-            <cite>Professor Cassandra Neitling<span>Microbiology, Folsom Lake College</span></cite>
-          </blockquote>
+        <div class="welcome-letter">
+          <div>
+            <div class="kicker">A welcome from your professor</div>
+            <h2>Welcome!</h2>
+            <p>I am Cassandra Neitling, professor of Microbiology at Folsom Lake College. I have been at FLC for a few years and have LOVED every minute of it.</p>
+            <p>I started my academic career at Lake Tahoe Community College and transferred to Cornell University for my undergraduate degree and Harvard University for my graduate degree. Community college has always held a special place in my heart because it was where I really grew up and decided who I wanted to be. It gave me the confidence to pursue any university I aspired to attend. I admired my professors, developed incredibly beneficial study habits, and learned a TON about science.</p>
+            <p>I look forward to working with you to develop your scientific confidence, to perfect your own personal study techniques, and support you throughout your educational journey. I hope you will feel encouraged every step of the way and I know you will learn all about MICROORGANISMS!</p>
+            <p class="sign">Let's do this!<br>Prof.<span>Professor Cassandra Neitling</span></p>
+          </div>
+          <figure class="classroom">
+            <img src="assets/classroom.jpg" width="900" height="1512" alt="Professor Neitling at her desk in her Folsom Lake College classroom" loading="lazy">
+            <figcaption>In the classroom &middot; Folsom Lake College</figcaption>
+          </figure>
         </div>
       </div>
     </div>
@@ -568,6 +619,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           <div class="card">
             <div class="ic"><svg aria-hidden="true"><use href="#i-cap"/></svg></div>
             <h3>Education</h3>
+            <p style="margin:0 0 10px"><strong>Lake Tahoe Community College</strong><br><span class="muted">Where she started her academic career</span></p>
             <p style="margin:0 0 10px"><strong>Cornell University</strong><br><span class="muted">Undergraduate degree</span> <span class="ph">degree &amp; field</span></p>
             <p style="margin:0"><strong>Harvard University</strong><br><span class="muted">Master's degree</span> <span class="ph">degree &amp; field</span></p>
           </div>
@@ -611,6 +663,21 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           </div>
         </div>
         <p class="muted small" style="margin-top:18px">Times are for Fall 2026. Always confirm in the official <a href="https://flc.losrios.edu/" rel="noopener">Folsom Lake College</a> class schedule (search “BIOL 442”). Course materials are in Canvas under Modules.</p>
+      </div>
+    </div>
+
+    <div class="band" id="schedule-files" style="padding-top:0">
+      <div class="wrap">
+        <div class="kicker">Course files</div>
+        <h2>Schedules &amp; Lecture Slides</h2>
+        <p class="muted" style="margin:0 0 22px;max-width:70ch">The schedule you will follow throughout the semester. Make sure to pay attention to required reading, pre and post lab due dates, quizzes, and exams.</p>
+        <ul class="files">
+          <li><a href="https://drive.google.com/file/d/1pWIpRbA5oEb-VnbuFxmAH60cSWnbNluq/view" target="_blank" rel="noopener"><span class="ft">PDF</span><span><strong>Microbiology Course Schedule, Fall 2026</strong><span class="d">Reading, pre- and post-lab due dates, quizzes and exams</span></span><span class="ext">Open &#8599;</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1QtaeiRzUpbgXgUUuiGSQt_6tWEC2Ya55/view" target="_blank" rel="noopener"><span class="ft">PDF</span><span><strong>Updated &amp; Revised Schedule, Fall 2026</strong><span class="d">The latest version of the schedule</span></span><span class="ext">Open &#8599;</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1SzP2jTIAb03WghcxYUT5jWLZbra0v9h6/view" target="_blank" rel="noopener"><span class="ft">PDF</span><span><strong>Week 1 &middot; Lecture 1 Slides</strong><span class="d">Bacterial Morphology Review</span></span><span class="ext">Open &#8599;</span></a></li>
+          <li><a href="https://drive.google.com/file/d/1SQvqfIMJu1IkUcW-5TtjkJPghz94MKpT/view" target="_blank" rel="noopener"><span class="ft">PDF</span><span><strong>Week 1 &middot; Lecture 2 Slides</strong><span class="d">Bacterial Metabolism</span></span><span class="ext">Open &#8599;</span></a></li>
+        </ul>
+        <p class="muted small" style="margin-top:14px">The textbook PDF and all other course materials are in Canvas.</p>
       </div>
     </div>
 
@@ -734,6 +801,55 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
               <p>Most nursing programs require an A or B in Microbiology. Plan ahead, track your points, and reach out early if you're at risk of a C. Use every resource: office hours, embedded tutors, classmates and your Success Coach.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RESOURCES ===================== -->
+  <section id="tab-resources" data-tab hidden data-title="Student Resources" data-sub="Folsom Lake College has someone whose sole job is to help you on your journey. Use every resource.">
+    <div class="band">
+      <div class="wrap">
+        <div class="split" style="align-items:center">
+          <div class="intro">
+            <div class="kicker">Intro to FLC</div>
+            <h2>Use every resource</h2>
+            <p>Folsom Lake College is one of the most welcoming, inclusive, and caring environments I have ever experienced. The faculty and administration honestly want you to succeed in becoming the best version of yourself, have an exciting and fulfilling career, and feel supported along the way. I highly recommend that you USE EVERY RESOURCE the college offers! From tutoring to counseling services, the science center, financial assistance, writing assistance, career counseling... anything you can think of, the college has someone whose sole job it is to help you on your journey. A great place to start is David Staves, your success coach!</p>
+            <p class="muted small" style="margin:0">&mdash; Professor Neitling</p>
+          </div>
+          <div class="callout">
+            <div class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></div>
+            <div>
+              <h3>Not sure where to start?</h3>
+              <p>See everything Folsom Lake College offers students on the college's <a href="https://flc.losrios.edu/student-resources" target="_blank" rel="noopener">Student Resources page</a>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="resources">
+          <a class="res" href="https://flc.losrios.edu/about-us/contact-us/employee-directory" target="_blank" rel="noopener">
+            <div class="pic"><svg aria-hidden="true"><use href="#i-star"/></svg></div>
+            <div class="body"><h3>Success Coach</h3><p>A great place to start: David Staves, your success coach.</p><span class="go">Visit FLC page</span></div>
+          </a>
+          <a class="res" href="https://flc.losrios.edu/about-us/parking-and-maps" target="_blank" rel="noopener">
+            <div class="pic"><svg aria-hidden="true"><use href="#i-pin"/></svg></div>
+            <div class="body"><h3>Campus Map</h3><p>Parking, buildings and how to find your way around campus.</p><span class="go">Visit FLC page</span></div>
+          </a>
+          <a class="res" href="https://flc.losrios.edu/student-resources/basic-needs-resources" target="_blank" rel="noopener">
+            <div class="pic"><img src="assets/res-basic-needs.jpg" alt="Student pantry shelves stocked with food" loading="lazy"></div>
+            <div class="body"><h3>Basic Needs &amp; Resources</h3><p>Food, housing and other basic-needs support for students.</p><span class="go">Visit FLC page</span></div>
+          </a>
+          <a class="res" href="https://flc.losrios.edu/student-resources/basic-needs-resources/health-and-mental-wellness-resources" target="_blank" rel="noopener">
+            <div class="pic"><img src="assets/res-health.jpg" alt="Students walking together on campus" loading="lazy"></div>
+            <div class="body"><h3>Mental &amp; Physical Health</h3><p>Health and mental wellness resources.</p><span class="go">Visit FLC page</span></div>
+          </a>
+          <a class="res" href="https://flc.losrios.edu/student-resources/tutoring-and-academic-assistance/science-center" target="_blank" rel="noopener">
+            <div class="pic"><img src="assets/res-science-center.jpg" alt="A tutor helping a student at a computer" loading="lazy"></div>
+            <div class="body"><h3>Science Center &amp; Tutoring</h3><p>Tutoring and study help for science courses.</p><span class="go">Visit FLC page</span></div>
+          </a>
+          <a class="res" href="https://flc.losrios.edu/student-resources/support-services/dsps" target="_blank" rel="noopener">
+            <div class="pic"><img src="assets/res-disability.jpg" alt="A group of students" loading="lazy"></div>
+            <div class="body"><h3>Accommodations &amp; Disability Services</h3><p>Disability Services and Programs for Students (DSPS).</p><span class="go">Visit FLC page</span></div>
+          </a>
         </div>
       </div>
     </div>
@@ -997,6 +1113,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
           <li><a href="#about">About Microbiology</a></li>
           <li><a href="#schedule">Class Schedule</a></li>
           <li><a href="#assignments">Assignments &amp; Grading</a></li>
+          <li><a href="#resources">Student Resources</a></li>
           <li><a href="#letters">Recommendation Letters</a></li>
           <li><a href="#careers">Career Opportunities</a></li>
         </ul>
@@ -1005,6 +1122,7 @@ button.link{background:none;color:var(--muted);padding:0;margin:0;font-weight:50
         <h4>For students</h4>
         <ul>
           <li><a href="#schedule-office">Office Hours</a></li>
+          <li><a href="#schedule-files">Course Schedule &amp; Slides</a></li>
           <li><a href="#schedule-textbook">Textbook &amp; Prerequisites</a></li>
           <li><a href="#letters">Request a Letter</a></li>
           <li><a href="https://www.ratemyprofessors.com/professor/2915649" target="_blank" rel="noopener">Rate My Professors &#8599;</a></li>
